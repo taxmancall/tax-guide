@@ -90,6 +90,11 @@ footer .d{color:var(--muted);font-size:14px;margin-top:2px;user-select:all}
 .nav button{font:inherit;font-size:14.5px;font-weight:700;padding:8px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
 .nav button[aria-current="true"]{background:var(--green);border-color:var(--green);color:var(--on-green)}
 .field[hidden]{display:none}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
+.seg button{font:inherit;font-size:14.5px;font-weight:700;border:0;background:transparent;color:var(--muted);padding:6px 22px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--green);color:var(--on-green)}
+.nav button[hidden]{display:none}
+.a a,.warn a,.sub2 a{color:var(--green-ink);font-weight:700}
 .nav button[disabled]{font-weight:500;opacity:.75}
 .nav small{font-weight:400;font-size:11.5px;margin-left:4px}
 .case{margin-top:26px;background:var(--green);color:var(--on-green);border-radius:14px;padding:20px 22px}
@@ -163,14 +168,20 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
   </header>
 
   <!-- 분야 메뉴: 분야를 추가할 때 버튼(data-f)과 같은 id의 <section class="field">를 하나씩 더 만듭니다 -->
-  <div class="navrow">
+  <div class="navrow" style="flex-direction:column;align-items:flex-start">
+    <div class="seg" role="group" aria-label="개인 또는 법인">
+      <button type="button" data-seg="p" aria-pressed="true">개인</button>
+      <button type="button" data-seg="c" aria-pressed="false">법인</button>
+    </div>
     <nav class="nav" aria-label="분야">
-      <button type="button" data-f="chwideuk" aria-current="true">주택 취득<small>집을 살 때</small></button>
-      <button type="button" data-f="sangga" aria-current="false">상가 취득<small>상가를 살 때</small></button>
-      <button type="button" data-f="imdae" aria-current="false">임대주택 취득<small>임대할 집을 살 때</small></button>
-      <button type="button" data-f="yangdo" aria-current="false">양도<small>집을 팔 때</small></button>
-      <button type="button" data-f="jeungyeo" aria-current="false">증여<small>집을 줄 때</small></button>
-      <button type="button" data-f="sangsok" aria-current="false">상속<small>집을 물려받을 때</small></button>
+      <button type="button" data-g="p" data-f="chwideuk" aria-current="true">주택 취득<small>집을 살 때</small></button>
+      <button type="button" data-g="p" data-f="sangga" aria-current="false">상가 취득<small>상가를 살 때</small></button>
+      <button type="button" data-g="p" data-f="imdae" aria-current="false">임대주택 취득<small>임대할 집을 살 때</small></button>
+      <button type="button" data-g="p" data-f="yangdo" aria-current="false">양도<small>집을 팔 때</small></button>
+      <button type="button" data-g="p" data-f="jeungyeo" aria-current="false">증여<small>집을 줄 때</small></button>
+      <button type="button" data-g="p" data-f="sangsok" aria-current="false">상속<small>집을 물려받을 때</small></button>
+      <button type="button" data-g="c" data-f="bjutaek" aria-current="false" hidden>주택 취득<small>법인으로 집을 살 때</small></button>
+      <button type="button" data-g="c" data-f="bsangga" aria-current="false" hidden>상가 취득<small>법인으로 상가를 살 때</small></button>
     </nav>
   </div>
 
@@ -223,14 +234,7 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <tr><td>팔 때 세금</td><td>양도소득세</td><td>법인세에 더해 <b>양도차익의 20%를 추가 과세</b></td></tr>
     <tr><td>비과세·공제</td><td>1세대 1주택 비과세, 장기보유특별공제</td><td>둘 다 없음</td></tr>
     <tr><td>이익을 꺼낼 때</td><td>해당 없음</td><td>급여나 배당으로 받으며 소득세를 한 번 더 냄</td></tr></table></div>
-    <h3 style="margin-top:18px">업무와 관련 없는 주택으로 분류되면</h3>
-    <p class="sub2" style="margin:0 0 4px">법인이 산 주택을 사업에 직접 쓰지 않으면(대표나 가족이 거주, 비워 둠 등) 비업무용 자산으로 보아 불이익이 더해집니다.</p>
-    <div class="tw"><table><tr><th>항목</th><th>불이익</th></tr>
-    <tr><td>대출이자</td><td>그 주택에 해당하는 이자를 비용으로 인정받지 못함</td></tr>
-    <tr><td>유지비용</td><td>재산세, 관리비, 수선비, 감가상각비를 비용으로 인정받지 못함</td></tr>
-    <tr><td>대표·가족이 거주</td><td>무상이나 싼값에 살면 적정 임대료만큼을 대표의 급여로 보아 소득세 과세</td></tr>
-    <tr><td>부가가치세</td><td>관련 매입세액을 공제받지 못함</td></tr></table></div>
-    <div class="warn"><b>법인 명의는 계약 전에 반드시 상담받으세요.</b> 취득세 12%와 종합부동산세만으로도 개인보다 부담이 훨씬 큽니다. 한번 법인 명의로 등기하면 개인으로 되돌릴 때 다시 취득세와 양도 관련 세금이 나옵니다.</div>
+    <div class="warn"><b>법인 명의는 계약 전에 반드시 상담받으세요.</b> 취득세 12%와 종합부동산세만으로도 개인보다 부담이 훨씬 큽니다. 한번 법인 명의로 등기하면 개인으로 되돌릴 때 다시 취득세와 양도 관련 세금이 나옵니다. 절차와 주의할 점은 <a href="#bjutaek">법인 주택 취득 편</a>에 정리했습니다.</div>
 
     <h2 id="b3"><span class="no">3</span>규제지역에서 살 때</h2>
     <p class="sub2">조정대상지역과 토지거래허가구역은 서로 다른 제도입니다. 한 집이 둘 다에 해당할 수 있습니다.</p>
@@ -304,7 +308,7 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <tr><td>임대소득</td><td>다른 소득과 합쳐 종합소득세 (6~45%)</td><td>법인세. 대표가 가져가려면 급여나 배당으로 받아 다시 소득세를 냄</td></tr>
     <tr><td>팔 때</td><td>양도소득세, 장기보유특별공제 최대 30%</td><td>법인세 (장기보유특별공제 없음)</td></tr>
     <tr><td>건강보험료</td><td>임대소득에 따라 지역가입자 보험료</td><td>임대소득이 대표 개인 소득에 잡히지 않음</td></tr></table></div>
-    <p class="sub2" style="margin:8px 0 0">임대소득이 크고 오래 보유할 계획이면 법인이 유리할 수 있지만, 돈을 개인으로 꺼낼 때 세금을 한 번 더 냅니다. 본점 소재지와 설립 시기에 따라 취득세가 크게 달라지니 계약 전에 확인하세요.</p>
+    <p class="sub2" style="margin:8px 0 0">임대소득이 크고 오래 보유할 계획이면 법인이 유리할 수 있지만, 돈을 개인으로 꺼낼 때 세금을 한 번 더 냅니다. 본점 소재지와 설립 시기에 따라 취득세가 크게 달라지니 계약 전에 확인하세요. 절차와 주의할 점은 <a href="#bsangga">법인 상가 취득 편</a>에 정리했습니다.</p>
 
     <h2 id="c2"><span class="no">2</span>진행 절차</h2>
     <p class="sub2">계약 전 점검부터 임대 시작 후 신고까지 일곱 단계입니다.</p>
@@ -717,7 +721,133 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     </ul>
   </section>
 
-  <p class="disc">※ 2026년 10월 1일 현재 법령과 정부 발표를 바탕으로, 개인을 기준으로 정리한 일반적인 안내입니다. 법인은 주택 취득 편과 상가 취득 편의 '법인 명의로 살 때'를 참고하세요. '정부안'으로 표시한 내용은 국회 심의 과정에서 바뀔 수 있으며, 실제 세금은 개별 사정에 따라 달라지므로 계약이나 등기 전에 반드시 상담받으시기 바랍니다.</p>
+  <section class="field" id="bjutaek" data-g="c" hidden>
+    <div class="case">
+      <div class="k">법인 · 주택 취득 편</div>
+      <div class="t">법인으로 집을 사려고 합니다</div>
+      <p>법인도 주택을 살 수 있지만, 살 때부터 팔 때까지 개인보다 세금이 무겁습니다. 왜 법인으로 사는지부터 분명히 하세요.</p>
+      <div class="toc"><a href="#p1">1 세금과 불이익</a><a href="#p2">2 진행 절차</a><a href="#p3">3 미리 따져볼 것</a><a href="#p4">4 준비 서류</a></div>
+    </div>
+
+    <h2 id="p1"><span class="no">1</span>세금과 불이익</h2>
+    <p class="sub2">법인이 주택을 사면 취득, 보유, 양도 단계마다 개인에게 없는 부담이 붙습니다.</p>
+    <div class="tw"><table><tr><th>단계</th><th>법인이 내는 세금</th><th>개인과 다른 점</th></tr>
+    <tr><td>살 때</td><td><b>취득세 12% 중과</b> (지방교육세·농어촌특별세 별도)</td><td>개인은 1~3%, 주택 수와 관계없이 법인은 12%</td></tr>
+    <tr><td>보유하는 동안</td><td><b>종합부동산세 2.7%</b> (3주택 이상 5%)</td><td>공제가 없고 세부담 상한도 없음</td></tr>
+    <tr><td>팔 때</td><td>법인세(10~25%) + <b>양도차익의 20% 추가 과세</b></td><td>1세대 1주택 비과세, 장기보유특별공제가 없음</td></tr>
+    <tr><td>이익을 꺼낼 때</td><td>급여·배당에 대한 소득세</td><td>법인 단계와 개인 단계에서 두 번 과세</td></tr></table></div>
+    <h3 style="margin-top:18px">업무와 관련 없는 주택으로 분류되면</h3>
+    <p class="sub2" style="margin:0 0 4px">법인이 산 주택을 사업에 직접 쓰지 않으면(대표나 가족이 거주, 비워 둠 등) 비업무용 자산으로 보아 불이익이 더해집니다.</p>
+    <div class="tw"><table><tr><th>항목</th><th>불이익</th></tr>
+    <tr><td>대출이자</td><td>그 주택에 해당하는 이자를 비용으로 인정받지 못함</td></tr>
+    <tr><td>유지비용</td><td>재산세, 관리비, 수선비, 감가상각비를 비용으로 인정받지 못함</td></tr>
+    <tr><td>대표·가족이 거주</td><td>무상이나 싼값에 살면 적정 임대료만큼을 대표의 급여로 보아 소득세 과세</td></tr>
+    <tr><td>부가가치세</td><td>관련 매입세액을 공제받지 못함</td></tr></table></div>
+    <div class="note"><b>정확한 취득세는 잔금 전에 법무사에게 확인하세요.</b> 보통 중개사를 통해 등기를 맡을 법무사가 취득세와 등기 비용을 미리 계산해 알려 줍니다.</div>
+
+    <h2 id="p2"><span class="no">2</span>진행 절차</h2>
+    <p class="sub2">계약 전 점검부터 매년 하는 신고까지 일곱 단계입니다.</p>
+    <ol class="steps">
+      <li><span class="c">1</span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>주택을 어떤 용도로 쓸지(임대, 직원 사택, 매매), 자금을 어떻게 마련할지, 정관의 목적사업에 맞는지 확인합니다. 세금 부담을 개인 명의와 비교해 봅니다.</p></div></li>
+      <li><span class="c">2</span><div><span class="h">내부 결의</span><p>이사회나 주주총회에서 취득을 결의하고 의사록을 남깁니다. 은행 대출과 등기에 필요합니다.</p></div></li>
+      <li><span class="c">3</span><div><span class="h">매매계약</span><p>법인 명의로 계약하고 법인인감을 날인합니다. 대금은 반드시 법인 계좌에서 보냅니다.</p></div></li>
+      <li><span class="c">4</span><div><span class="h">부동산 거래신고와 자금조달계획서</span><span class="when">계약일부터 30일 이내</span><p>법인은 지역과 금액에 관계없이 자금조달계획서를 내고, 법인 현황과 취득 목적도 함께 신고합니다.</p></div></li>
+      <li><span class="c">5</span><div><span class="h">잔금, 취득세, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다.</p></div></li>
+      <li><span class="c">6</span><div><span class="h">용도에 맞게 정리</span><p>임대하면 임대차계약을 맺고 사업자등록에 임대업을 추가합니다. 사택으로 쓰면 사택 규정과 입주 직원을 정해 둡니다. 정리해 두지 않으면 비업무용 자산으로 분류됩니다.</p></div></li>
+      <li><span class="c">7</span><div><span class="h">매년 하는 신고</span><span class="when">매년</span><p>법인세(사업연도 종료 후 3개월 이내), 재산세(7월, 9월), 종합부동산세(12월)를 신고·납부합니다.</p></div></li>
+    </ol>
+
+    <h2 id="p3"><span class="no">3</span>미리 따져볼 것</h2>
+    <p class="sub2">법인 명의는 되돌리기 어렵습니다.</p>
+    <div class="grid2">
+      <div class="card"><b class="h">대표나 가족이 살 집이라면</b><p>가장 불리한 경우입니다. 비업무용 자산이 되어 이자와 유지비를 비용으로 인정받지 못하고, 적정 임대료만큼이 대표의 급여로 과세됩니다.</p></div>
+      <div class="card"><b class="h">직원 사택으로 쓴다면</b><p>직원에게 제공하는 사택은 업무용으로 인정됩니다. 다만 지분이 많은 대표나 임원이 쓰는 경우는 인정되지 않습니다.</p></div>
+      <div class="card"><b class="h">대표가 법인에 돈을 빌려준다면</b><p>대표가 넣은 돈은 법인의 빚(가수금)으로 남습니다. 차용 약정과 이체 내역을 남겨 두어야 나중에 돌려받을 때 문제가 없습니다.</p></div>
+      <div class="card"><b class="h">법인 돈을 대표가 쓴다면</b><p>법인 자금을 대표 개인 용도로 쓰면 가지급금이 되어, 이자 상당액이 대표의 소득으로 과세되고 법인의 이자 비용도 일부 인정받지 못합니다.</p></div>
+      <div class="card"><b class="h">대출이 가능한지</b><p>주택을 담보로 한 법인 대출은 제한이 많습니다. 계약 전에 은행에서 가능 여부와 한도를 먼저 확인하세요.</p></div>
+      <div class="card"><b class="h">팔 때까지의 총 세금</b><p>취득세 12%, 해마다 종합부동산세, 팔 때 법인세와 20% 추가 과세, 꺼낼 때 소득세까지 합쳐서 개인 명의와 비교해야 합니다.</p></div>
+    </div>
+
+    <h2 id="p4"><span class="no">4</span>준비 서류</h2>
+    <p class="sub2">계약, 신고, 등기에 필요한 서류입니다.</p>
+    <ul class="docs">
+      <li>법인 등기사항증명서</li>
+      <li>법인 인감증명서, 법인인감</li>
+      <li>사업자등록증 사본</li>
+      <li>정관, 주주명부</li>
+      <li>이사회(주주총회) 의사록</li>
+      <li>매매계약서</li>
+      <li>자금조달계획서와 증빙 (예금 잔액, 대출, 차입 약정서)</li>
+      <li>법인 주택 거래계약 신고서</li>
+      <li>취득세 납부 영수증</li>
+      <li>법무사·중개수수료 세금계산서</li>
+    </ul>
+  </section>
+
+  <section class="field" id="bsangga" data-g="c" hidden>
+    <div class="case">
+      <div class="k">법인 · 상가 취득 편</div>
+      <div class="t">법인으로 상가를 사려고 합니다</div>
+      <p>법인의 상가 취득은 본점이 어디에 있고 언제 세웠는지에 따라 취득세가 두 배로 달라집니다. 계약 전에 이것부터 확인하세요.</p>
+      <div class="toc"><a href="#q1">1 개인과 다른 점</a><a href="#q2">2 진행 절차</a><a href="#q3">3 미리 따져볼 것</a><a href="#q4">4 준비 서류</a></div>
+    </div>
+
+    <h2 id="q1"><span class="no">1</span>개인과 다른 점</h2>
+    <p class="sub2">부가가치세는 개인과 같고, 취득세와 소득에 대한 세금이 다릅니다.</p>
+    <div class="tw"><table><tr><th>구분</th><th>개인</th><th>법인</th></tr>
+    <tr><td>취득세</td><td>4.6%</td><td>4.6%, 과밀억제권역 중과 대상이면 <b>약 9.4%</b></td></tr>
+    <tr><td>부가가치세</td><td>건물값의 10%, 일반과세자는 환급</td><td>같음</td></tr>
+    <tr><td>임대소득</td><td>종합소득세 (6~45%)</td><td>법인세 (10~25%)</td></tr>
+    <tr><td>팔 때</td><td>양도소득세, 장기보유특별공제 최대 30%</td><td>법인세 (장기보유특별공제 없음, 추가 과세 없음)</td></tr>
+    <tr><td>이익을 꺼낼 때</td><td>해당 없음</td><td>급여·배당에 대한 소득세를 한 번 더 냄</td></tr>
+    <tr><td>건강보험료</td><td>임대소득에 따라 지역가입자 보험료</td><td>임대소득이 대표 개인 소득에 잡히지 않음</td></tr></table></div>
+    <div class="warn"><b>과밀억제권역 취득세 중과를 먼저 확인하세요.</b> 수도권 과밀억제권역 안에 본점이나 지점을 둔 지 5년이 안 된 법인이 그 권역 안의 부동산을 사면 취득세가 약 9.4%로 올라갑니다. 서울 전 지역과 부천, 인천 일부, 수원, 성남, 안양, 고양, 광명, 과천, 의왕, 군포, 하남, 구리, 의정부 등이 과밀억제권역입니다.</div>
+    <div class="note"><b>정확한 취득세는 잔금 전에 법무사에게 확인하세요.</b> 중과 대상인지는 법인 등기부의 설립일·본점 이전일과 상가 소재지로 판단합니다. 보통 중개사를 통해 등기를 맡을 법무사가 미리 계산해 알려 줍니다.</div>
+
+    <h2 id="q2"><span class="no">2</span>진행 절차</h2>
+    <p class="sub2">계약 전 점검부터 매년 하는 신고까지 여덟 단계입니다.</p>
+    <ol class="steps">
+      <li><span class="c">1</span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>본점 소재지와 설립일로 취득세 중과 여부를 확인합니다. 정관의 목적사업에 부동산임대업이 있는지, 임차인 현황과 대출 가능 금액도 확인합니다.</p></div></li>
+      <li><span class="c">2</span><div><span class="h">내부 결의</span><p>이사회나 주주총회에서 취득을 결의하고 의사록을 남깁니다.</p></div></li>
+      <li><span class="c">3</span><div><span class="h">매매계약</span><p>법인 명의로 계약합니다. 토지값과 건물값을 나누어 적고, 부가가치세를 별도로 할지 포괄양수도로 할지 정합니다.</p></div></li>
+      <li><span class="c">4</span><div><span class="h">사업자등록</span><span class="when">계약 후 바로</span><p>임대할 상가는 그 상가 소재지에 사업자등록(지점)을 따로 해야 합니다. 직접 쓸 상가는 기존 사업자등록에 사업장을 추가하거나 이전합니다.</p></div></li>
+      <li><span class="c">5</span><div><span class="h">부동산 거래신고</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다.</p></div></li>
+      <li><span class="c">6</span><div><span class="h">잔금, 취득세, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다. 건물분 세금계산서를 받아 둡니다.</p></div></li>
+      <li><span class="c">7</span><div><span class="h">부가가치세 환급 신청</span><span class="when">세금계산서를 받은 달의 다음 달 25일까지</span><p>건물분 부가가치세를 조기환급으로 신청합니다.</p></div></li>
+      <li><span class="c">8</span><div><span class="h">매년 하는 신고</span><span class="when">매년</span><p>부가가치세(1월, 4월, 7월, 10월)와 법인세(사업연도 종료 후 3개월 이내)를 신고합니다.</p></div></li>
+    </ol>
+    <div class="warn"><b>돈을 보낼 때마다, 세금계산서를 받을 때마다 사무소에 꼭 알려 주세요.</b> 계약금·중도금·잔금을 각각 언제 얼마 보냈는지, 세금계산서를 언제 얼마로 받았는지 알려 주셔야 그 달 분 부가가치세를 제때 환급 신청할 수 있습니다. 매매계약서 사본도 함께 보내 주세요.</div>
+
+    <h2 id="q3"><span class="no">3</span>미리 따져볼 것</h2>
+    <p class="sub2">계약서를 쓰기 전에 정해야 하는 것들입니다.</p>
+    <div class="grid2">
+      <div class="card"><b class="h">취득세 중과를 피할 수 있는지</b><p>설립 후 5년이 지났거나 본점이 과밀억제권역 밖에 있으면 중과되지 않습니다. 다만 권역 밖 법인이라도 그 상가에 직원을 두고 지점으로 쓰면 중과될 수 있습니다.</p></div>
+      <div class="card"><b class="h">직접 쓸지, 임대할지</b><p>법인이 사업장으로 직접 쓰면 임차료가 나가지 않고, 임대하면 임대수입이 법인 매출이 됩니다. 용도에 따라 사업자등록과 부가가치세 처리가 달라집니다.</p></div>
+      <div class="card"><b class="h">부가가치세를 낼지, 포괄양수도로 할지</b><p>임대 중인 상가를 임차인과 함께 그대로 넘겨받으면 부가가치세 없이 거래할 수 있습니다. 법인이 직접 쓸 계획이면 포괄양수도가 되지 않습니다.</p></div>
+      <div class="card"><b class="h">대표와 법인 사이의 거래</b><p>대표 소유 상가를 법인이 사거나 빌릴 때, 법인 상가를 대표가 쓸 때는 시세대로 거래해야 합니다. 시세와 다르면 차액에 세금이 붙습니다.</p></div>
+      <div class="card"><b class="h">대출이자와 가지급금</b><p>법인에 대표 가지급금이 있으면 상가 대출이자의 일부를 비용으로 인정받지 못합니다. 취득 전에 가지급금을 정리해 두는 것이 좋습니다.</p></div>
+      <div class="card"><b class="h">이익을 어떻게 꺼낼지</b><p>법인세율은 낮지만 급여나 배당으로 꺼낼 때 소득세를 다시 냅니다. 임대수익을 법인에 쌓아 둘지, 꺼내 쓸지에 따라 유불리가 달라집니다.</p></div>
+      <div class="card"><b class="h">임차인의 권리</b><p>기존 임대차계약과 보증금을 그대로 넘겨받습니다. 임차인은 최초 계약일부터 10년까지 계약 갱신을 요구할 수 있습니다.</p></div>
+      <div class="card"><b class="h">나중에 팔 때</b><p>양도차익이 법인세로 과세되고 장기보유특별공제가 없습니다. 오래 보유할수록 개인 명의보다 불리해질 수 있습니다.</p></div>
+    </div>
+
+    <h2 id="q4"><span class="no">4</span>준비 서류</h2>
+    <p class="sub2">계약, 사업자등록, 등기에 필요한 서류입니다.</p>
+    <ul class="docs">
+      <li>법인 등기사항증명서</li>
+      <li>법인 인감증명서, 법인인감</li>
+      <li>사업자등록증 사본</li>
+      <li>정관, 주주명부</li>
+      <li>이사회(주주총회) 의사록</li>
+      <li>매매계약서 (토지값·건물값 구분, 부가가치세 조항)</li>
+      <li>포괄양수도 계약서 (해당하는 경우)</li>
+      <li>기존 임대차계약서 사본, 임차인 현황</li>
+      <li>건물분 세금계산서</li>
+      <li>취득세 납부 영수증</li>
+    </ul>
+  </section>
+
+  <p class="disc">※ 2026년 10월 1일 현재 법령과 정부 발표를 바탕으로, 개인을 기준으로 정리한 일반적인 안내입니다. 법인은 위쪽의 '법인'을 눌러 법인 편을 참고하세요. '정부안'으로 표시한 내용은 국회 심의 과정에서 바뀔 수 있으며, 실제 세금은 개별 사정에 따라 달라지므로 계약이나 등기 전에 반드시 상담받으시기 바랍니다.</p>
   <footer><div class="n">원제우세무사사무소</div><div class="d">032-321-4521 · taxmancall.com</div></footer>
 </div>
 <button class="totop" id="totop" type="button" aria-label="맨 위로" title="맨 위로" hidden>↑</button>
@@ -741,8 +871,13 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     apply();
   });
   var fields=[].slice.call(document.querySelectorAll('.field')), tabs=[].slice.call(document.querySelectorAll('.nav button'));
+  var segs=[].slice.call(document.querySelectorAll('.seg button'));
+  segs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.seg==='c'?'bjutaek':'chwideuk',false)})});
   function show(f,scroll){
     var el=document.getElementById(f), sec=el&&el.closest('.field'); f=sec?sec.id:'chwideuk';
+    var g=(document.getElementById(f).dataset.g)||'p';
+    tabs.forEach(function(b){b.hidden=(b.dataset.g||'p')!==g});
+    segs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.seg===g?'true':'false')});
     fields.forEach(function(x){x.hidden=x.id!==f});
     tabs.forEach(function(b){b.setAttribute('aria-current',b.dataset.f===f?'true':'false')});
     try{history.replaceState(null,'','#'+f)}catch(e){}
@@ -750,7 +885,7 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.f,false)})});
   var h=location.hash.slice(1); if(h) show(h,false);
-  window.addEventListener('hashchange',function(){var x=location.hash.slice(1); if(x){var e=document.getElementById(x), c=e&&e.closest('.field'); if(c&&c.hidden) show(x,false);}});
+  window.addEventListener('hashchange',function(){var x=location.hash.slice(1); if(x){var e=document.getElementById(x), c=e&&e.closest('.field'); if(c&&c.hidden){show(x,false); e.scrollIntoView();}}});
   var top=document.getElementById('totop');
   function tog(){top.hidden=window.scrollY<400}
   window.addEventListener('scroll',tog,{passive:true}); tog();
