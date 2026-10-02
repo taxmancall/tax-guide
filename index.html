@@ -146,19 +146,104 @@ h3{font-size:15.5px;color:var(--green-ink);margin:0 0 6px}
   <header>
     <div class="firm">원제우세무사사무소</div>
     <h1>2026년 재산 종합 안내서</h1>
-    <p class="lede">상황별로 절차와 세금, 미리 챙기실 것을 쉬운 말로 정리했습니다.</p>
+    <p class="lede">집을 사고, 팔고, 증여하고, 상속받을 때의 절차와 세금, 미리 챙기실 것을 쉬운 말로 정리했습니다.</p>
   </header>
 
   <!-- 분야 메뉴: 분야를 추가할 때 버튼(data-f)과 같은 id의 <section class="field">를 하나씩 더 만듭니다 -->
   <div class="navrow">
     <nav class="nav" aria-label="분야">
-      <button type="button" data-f="yangdo" aria-current="true">양도<small>집을 팔 때</small></button>
+      <button type="button" data-f="chwideuk" aria-current="true">취득<small>집을 살 때</small></button>
+      <button type="button" data-f="yangdo" aria-current="false">양도<small>집을 팔 때</small></button>
       <button type="button" data-f="jeungyeo" aria-current="false">증여<small>집을 줄 때</small></button>
       <button type="button" data-f="sangsok" aria-current="false">상속<small>집을 물려받을 때</small></button>
     </nav>
   </div>
 
-  <section class="field" id="yangdo">
+  <section class="field" id="chwideuk">
+    <div class="case">
+      <div class="k">취득 편</div>
+      <div class="t">집을 사려고 합니다</div>
+      <p>살 때의 선택이 나중에 팔 때, 증여할 때, 상속할 때의 세금까지 좌우합니다. 계약 전에 자금과 명의부터 확인하세요.</p>
+      <div class="toc"><a href="#b1">1 진행 절차</a><a href="#b2">2 세금 안내</a><a href="#b3">3 규제지역에서 살 때</a><a href="#b4">4 미리 따져볼 것</a><a href="#b5">5 준비 서류</a></div>
+    </div>
+
+    <h2 id="b1"><span class="no">1</span>진행 절차</h2>
+    <p class="sub2">계약 전 점검부터 전입까지 일곱 단계입니다.</p>
+    <ol class="steps">
+      <li><span class="c">1</span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>집값을 어떤 돈으로 치를지, 누구 명의로 살지, 세대 전체의 주택이 몇 채가 되는지 확인합니다. 이 세 가지로 취득세와 이후 세금이 정해집니다.</p></div></li>
+      <li><span class="c">2</span><div><span class="h">매매계약</span><p>계약서를 쓰고 계약금을 냅니다. 토지거래허가구역의 주택은 구청 허가를 먼저 받아야 계약할 수 있습니다.</p></div></li>
+      <li><span class="c">3</span><div><span class="h">부동산 거래신고와 자금조달계획서</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다. 대상 주택은 집값을 어떤 돈으로 마련하는지 적은 자금조달계획서를 함께 냅니다.</p></div></li>
+      <li><span class="c">4</span><div><span class="h">대출 실행과 잔금 준비</span><p>대출 한도와 실행일을 잔금일에 맞춥니다. 가족에게 빌리거나 받는 돈은 잔금 전에 차용증이나 증여세 신고로 정리해 둡니다.</p></div></li>
+      <li><span class="c">5</span><div><span class="h">잔금 지급</span><span class="when">취득일</span><p>잔금을 치른 날이 세법상 취득일입니다. 보유기간과 각종 기한을 이 날부터 계산합니다.</p></div></li>
+      <li><span class="c">6</span><div><span class="h">취득세 신고·납부와 소유권 이전 등기</span><span class="when">취득일부터 60일 이내</span><p>시·군·구청에 취득세를 신고·납부하고 등기를 이전합니다. 보통 잔금일에 법무사가 함께 처리합니다.</p></div></li>
+      <li><span class="c">7</span><div><span class="h">전입신고</span><p>실제로 이사하고 전입신고를 합니다. 거주기간은 나중에 비과세와 공제를 판단하는 기준이 됩니다.</p></div></li>
+    </ol>
+
+    <h2 id="b2"><span class="no">2</span>세금 안내</h2>
+    <p class="sub2">집을 살 때 내는 세금은 취득세입니다. 집값과 세대의 주택 수에 따라 세율이 달라집니다.</p>
+    <div class="two">
+      <div><h3>취득세율 (1주택)</h3>
+      <div class="tw"><table><tr><th>집값</th><th>세율</th></tr>
+      <tr><td>6억원 이하</td><td>1%</td></tr>
+      <tr><td>6억원 초과 9억원 이하</td><td>1~3% (집값에 따라)</td></tr>
+      <tr><td>9억원 초과</td><td>3%</td></tr></table></div>
+      <p class="sub2" style="margin:8px 0 0">여기에 지방교육세(0.1~0.3%)가 붙고, 전용 85㎡를 넘는 집은 농어촌특별세(0.2%)가 더 붙습니다.</p></div>
+      <div><h3>주택이 여러 채일 때</h3>
+      <div class="tw"><table><tr><th>사고 나면</th><th>조정대상지역</th><th>그 밖의 지역</th></tr>
+      <tr><td>2주택</td><td>8%</td><td>1~3%</td></tr>
+      <tr><td>3주택</td><td>12%</td><td>8%</td></tr>
+      <tr><td>4주택 이상</td><td>12%</td><td>12%</td></tr></table></div>
+      <p class="sub2" style="margin:8px 0 0">이사하느라 잠시 2주택이 되는 경우, 정해진 기한 안에 기존 집을 팔면 1~3%가 적용됩니다.</p></div>
+    </div>
+    <div class="note"><b>처음 집을 사신다면 취득세를 줄일 수 있습니다.</b> 본인과 배우자 모두 집을 가진 적이 없고 집값이 12억원 이하이면 취득세를 200만원까지 감면받습니다. 취득 후 3개월 안에 전입하고 3년간 거주해야 하며, 지키지 못하면 감면받은 세금을 다시 냅니다.</div>
+    <div class="note"><b>자금조달계획서를 내야 하는 집</b> 조정대상지역과 투기과열지구에서는 금액과 관계없이 모든 주택, 그 밖의 지역에서는 6억원 이상 주택이 대상입니다. 적어 낸 내용은 세무서에 통보되어 자금 출처를 확인하는 자료로 쓰입니다.</div>
+
+    <h2 id="b3"><span class="no">3</span>규제지역에서 살 때</h2>
+    <p class="sub2">조정대상지역과 토지거래허가구역은 서로 다른 제도입니다. 한 집이 둘 다에 해당할 수 있습니다.</p>
+    <div class="tw"><table><tr><th>구분</th><th>조정대상지역</th><th>토지거래허가구역</th></tr>
+    <tr><td>무엇이 달라지나</td><td>세금과 대출</td><td>거래 방식과 거주 의무</td></tr>
+    <tr><td>계약</td><td>제한 없음</td><td>구청 허가를 받은 뒤에 계약</td></tr>
+    <tr><td>거주</td><td>나중에 비과세를 받으려면 2년 이상 거주</td><td>산 사람이 2년간 직접 거주해야 함</td></tr>
+    <tr><td>전세 끼고 사기</td><td>가능하지만, 거주하지 않으면 비과세를 못 받음</td><td>원칙적으로 불가</td></tr>
+    <tr><td>취득세</td><td>2주택 8%, 3주택 이상 12%</td><td>달라지지 않음</td></tr>
+    <tr><td>자금조달계획서</td><td>금액과 관계없이 제출</td><td>허가 신청 때 자금 계획을 함께 제출</td></tr>
+    <tr><td>기존 집 처분 기한</td><td>기존 집도 조정대상지역이면 2년</td><td>달라지지 않음</td></tr>
+    <tr><td>나중에 팔 때</td><td>다주택이면 양도세 중과</td><td>달라지지 않음</td></tr></table></div>
+    <ul style="margin:10px 0 0;padding-left:20px;font-size:14.8px">
+      <li><b>현재 지정 지역</b>: 두 제도 모두 서울 전 지역과 경기 15곳입니다. 과천, 광명, 의왕, 하남, 구리, 성남(분당·수정·중원), 수원(영통·장안·팔달), 안양 동안, 용인(수지·기흥), 화성 동탄. 토지거래허가구역은 이 지역의 아파트가 주된 대상입니다.</li>
+      <li><b>거주요건은 살 때를 기준으로 정해집니다.</b> 잔금을 치를 때 조정대상지역이 아니었다면, 나중에 지정되어도 2년 거주 없이 비과세를 받을 수 있습니다.</li>
+      <li><b>세입자가 있는 집</b>: 토지거래허가구역이라도 무주택자가 사는 경우에는 임대차가 끝날 때까지 입주를 미룰 수 있습니다.</li>
+      <li>지정 지역과 대출 한도는 수시로 바뀌므로 계약 전에 꼭 확인하셔야 합니다.</li>
+    </ul>
+
+    <h2 id="b4"><span class="no">4</span>미리 따져볼 것</h2>
+    <p class="sub2">살 때 정한 것은 나중에 바꾸기 어렵습니다.</p>
+    <div class="grid2">
+      <div class="card"><b class="h">누구 명의로 살지</b><p>부부 공동명의는 나중에 팔 때 양도차익이 나뉘어 세금이 줄어드는 경우가 많습니다. 다만 각자 자기 몫의 집값을 낸 것이 확인되어야 하고, 배우자에게 받은 돈은 10년간 6억원까지만 증여세가 없습니다.</p></div>
+      <div class="card"><b class="h">집값을 어떤 돈으로 치를지</b><p>소득과 저축으로 설명되지 않는 금액은 증여로 추정됩니다. 본인 소득, 대출, 기존 집을 판 돈으로 집값이 설명되는지 계약 전에 맞춰 보세요.</p></div>
+      <div class="card"><b class="h">부모님이 도와주신다면</b><p>받는 돈은 증여세 신고를 하고, 빌리는 돈은 차용증을 쓰고 이자와 원금을 실제로 계좌로 갚아야 합니다. 갚은 흔적이 없으면 증여로 봅니다.</p></div>
+      <div class="card"><b class="h">세대 전체의 주택 수</b><p>취득세 중과는 세대 기준입니다. 배우자와 함께 사는 가족의 주택, 주거용 오피스텔, 분양권, 입주권까지 셉니다.</p></div>
+      <div class="card"><b class="h">기존 집이 있다면</b><p>새 집을 산 날부터 3년 안에 기존 집을 팔아야 비과세됩니다. 두 집이 모두 조정대상지역이면 2년입니다.</p></div>
+      <div class="card"><b class="h">영수증을 모아 두세요</b><p>취득세, 법무사 수수료, 중개수수료, 샷시·확장 공사비는 나중에 팔 때 경비로 인정됩니다. 영수증과 이체 내역이 없으면 인정받지 못합니다.</p></div>
+    </div>
+
+    <h2 id="b5"><span class="no">5</span>준비 서류</h2>
+    <p class="sub2">계약, 신고, 등기에 필요한 서류입니다.</p>
+    <ul class="docs">
+      <li>매매계약서</li>
+      <li>신분증과 도장</li>
+      <li>주민등록등본, 가족관계증명서 (세대의 주택 수 확인)</li>
+      <li>자금조달계획서 (대상 주택)</li>
+      <li>예금 잔액증명서, 대출 관련 서류</li>
+      <li>증여세 신고서 또는 차용증 (가족에게 받거나 빌린 경우)</li>
+      <li>기존 집 매매계약서 (판 돈으로 사는 경우)</li>
+      <li>취득세 납부 영수증</li>
+      <li>법무사·중개수수료 영수증</li>
+      <li>등기권리증 (등기 후 보관)</li>
+    </ul>
+  </section>
+
+  <section class="field" id="yangdo" hidden>
     <div class="case">
       <div class="k">양도 편</div>
       <div class="t">집을 팔려고 합니다</div>
@@ -454,7 +539,7 @@ h3{font-size:15.5px;color:var(--green-ink);margin:0 0 6px}
   });
   var fields=[].slice.call(document.querySelectorAll('.field')), tabs=[].slice.call(document.querySelectorAll('.nav button'));
   function show(f,scroll){
-    var el=document.getElementById(f), sec=el&&el.closest('.field'); f=sec?sec.id:'yangdo';
+    var el=document.getElementById(f), sec=el&&el.closest('.field'); f=sec?sec.id:'chwideuk';
     fields.forEach(function(x){x.hidden=x.id!==f});
     tabs.forEach(function(b){b.setAttribute('aria-current',b.dataset.f===f?'true':'false')});
     try{history.replaceState(null,'','#'+f)}catch(e){}
