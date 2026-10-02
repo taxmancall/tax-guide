@@ -121,6 +121,7 @@ h2 .no{font-family:var(--serif);margin-right:8px}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
 .two>div{min-width:0}
 h3{font-size:15.5px;color:var(--green-ink);margin:0 0 6px}
+h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
 @media print{
   @page{size:A4;margin:14mm 14mm 15mm}
   :root,:root[data-theme="dark"],:root:not([data-theme="light"]){--bg:#fff;--surface:#fff;--fg:#1e2a23;--muted:#5f6d64;--line:#d6e2d9;--green:#1b5e3a;--green-ink:#1b5e3a;--tint:#e8f3ea;--tint2:#f1f7f2;--on-green:#fff;--plan-fg:#9a5a17;--plan-line:#d9a15f;--plan-bg:#fdf6ec;color-scheme:light}
@@ -152,7 +153,7 @@ h3{font-size:15.5px;color:var(--green-ink);margin:0 0 6px}
   <!-- 분야 메뉴: 분야를 추가할 때 버튼(data-f)과 같은 id의 <section class="field">를 하나씩 더 만듭니다 -->
   <div class="navrow">
     <nav class="nav" aria-label="분야">
-      <button type="button" data-f="chwideuk" aria-current="true">취득<small>집을 살 때</small></button>
+      <button type="button" data-f="chwideuk" aria-current="true">취득<small>집·상가를 살 때</small></button>
       <button type="button" data-f="yangdo" aria-current="false">양도<small>집을 팔 때</small></button>
       <button type="button" data-f="jeungyeo" aria-current="false">증여<small>집을 줄 때</small></button>
       <button type="button" data-f="sangsok" aria-current="false">상속<small>집을 물려받을 때</small></button>
@@ -164,7 +165,7 @@ h3{font-size:15.5px;color:var(--green-ink);margin:0 0 6px}
       <div class="k">취득 편</div>
       <div class="t">집을 사려고 합니다</div>
       <p>살 때의 선택이 나중에 팔 때, 증여할 때, 상속할 때의 세금까지 좌우합니다. 계약 전에 자금과 명의부터 확인하세요.</p>
-      <div class="toc"><a href="#b1">1 진행 절차</a><a href="#b2">2 세금 안내</a><a href="#b3">3 규제지역에서 살 때</a><a href="#b4">4 미리 따져볼 것</a><a href="#b5">5 준비 서류</a></div>
+      <div class="toc"><a href="#b1">1 진행 절차</a><a href="#b2">2 세금 안내</a><a href="#b3">3 규제지역에서 살 때</a><a href="#b4">4 미리 따져볼 것</a><a href="#b5">5 준비 서류</a><a href="#b6">6 상가를 살 때</a></div>
     </div>
 
     <h2 id="b1"><span class="no">1</span>진행 절차</h2>
@@ -240,6 +241,52 @@ h3{font-size:15.5px;color:var(--green-ink);margin:0 0 6px}
       <li>취득세 납부 영수증</li>
       <li>법무사·중개수수료 영수증</li>
       <li>등기권리증 (등기 후 보관)</li>
+    </ul>
+    <h2 id="b6"><span class="no">6</span>상가를 살 때</h2>
+    <p class="sub2">상가는 주택과 세금 구조가 다릅니다. 부가가치세와 사업자등록이 추가됩니다.</p>
+    <div class="tw"><table><tr><th>구분</th><th>주택</th><th>상가</th></tr>
+    <tr><td>취득세</td><td>1~3% (다주택은 8%, 12%)</td><td>4.6% (지방교육세·농어촌특별세 포함), 주택 수와 무관</td></tr>
+    <tr><td>부가가치세</td><td>없음 (개인 간 매매)</td><td>건물값의 10%를 파는 사람에게 지급</td></tr>
+    <tr><td>사업자등록</td><td>필요 없음</td><td>임대사업자 등록 필요</td></tr>
+    <tr><td>자금조달계획서</td><td>대상 주택은 제출</td><td>제출 대상 아님</td></tr>
+    <tr><td>보유하는 동안</td><td>재산세, 종합부동산세</td><td>재산세, 임대소득에 대한 종합소득세와 부가가치세</td></tr>
+    <tr><td>나중에 팔 때</td><td>1세대 1주택 비과세 가능</td><td>비과세 없음, 장기보유특별공제 최대 30%</td></tr></table></div>
+
+    <h3 style="margin-top:22px">진행 절차</h3>
+    <ol class="steps">
+      <li><span class="c">1</span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>임대차계약서와 임차인 현황, 건물 용도, 대출 가능 금액을 확인합니다. 파는 사람이 일반과세자인지, 부가가치세를 따로 받는지도 확인합니다.</p></div></li>
+      <li><span class="c">2</span><div><span class="h">매매계약</span><p>계약서에 토지값과 건물값을 나누어 적고, 부가가치세를 별도로 할지 포괄양수도로 할지 정합니다. 계약서에 '부가가치세 별도'가 없으면 매매대금에 포함된 것으로 봅니다.</p></div></li>
+      <li><span class="c">3</span><div><span class="h">사업자등록 신청</span><span class="when">계약 후 바로</span><p>세무서나 홈택스에서 부동산임대업으로 등록합니다. 부가가치세를 돌려받으려면 반드시 <b>일반과세자</b>로 등록해야 하며, 간이과세자는 환급받지 못합니다.</p></div></li>
+      <li><span class="c">4</span><div><span class="h">부동산 거래신고</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다.</p></div></li>
+      <li><span class="c">5</span><div><span class="h">잔금 지급, 취득세 납부, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다. 건물분 세금계산서를 받아 둡니다.</p></div></li>
+      <li><span class="c">6</span><div><span class="h">부가가치세 환급 신청</span><span class="when">잔금일이 속한 달의 다음 달 25일까지</span><p>건물분 부가가치세를 조기환급으로 신청하면 보통 신고기한부터 15일 안에 돌려받습니다.</p></div></li>
+      <li><span class="c">7</span><div><span class="h">임대 시작 후 신고</span><span class="when">매년</span><p>부가가치세는 1월과 7월에, 임대소득에 대한 종합소득세는 다음 해 5월에 신고합니다.</p></div></li>
+    </ol>
+
+    <h3 style="margin-top:22px">미리 따져볼 것</h3>
+    <div class="grid2">
+      <div class="card"><b class="h">부가가치세를 낼지, 포괄양수도로 할지</b><p>임대 중인 상가를 임차인과 함께 그대로 넘겨받으면 부가가치세 없이 거래할 수 있습니다(포괄양수도). 파는 사람과 사는 사람이 모두 과세사업자여야 하고, 계약서에 그 내용을 적어야 합니다.</p></div>
+      <div class="card"><b class="h">토지값과 건물값 나누기</b><p>부가가치세는 건물값에만 붙습니다. 계약서의 구분이 기준시가 비율과 30% 이상 차이 나면 기준시가 비율로 다시 나눕니다.</p></div>
+      <div class="card"><b class="h">환급받은 부가가치세의 사후관리</b><p>환급받은 뒤 10년 안에 폐업하거나 면세 사업에 쓰거나 간이과세자로 바꾸면, 남은 기간만큼 부가가치세를 다시 냅니다.</p></div>
+      <div class="card"><b class="h">건강보험료와 국민연금</b><p>사업자등록을 하고 임대소득이 생기면 가족의 직장 건강보험 피부양자 자격을 잃고 지역가입자가 될 수 있습니다. 배우자 명의로 살 때 특히 확인하세요.</p></div>
+      <div class="card"><b class="h">누구 명의로 살지</b><p>임대소득은 다른 소득과 합쳐 6~45%로 과세됩니다. 소득이 적은 배우자 명의나 공동명의가 소득세에는 유리하지만, 자금 출처와 건강보험료를 함께 따져야 합니다.</p></div>
+      <div class="card"><b class="h">감가상각을 할지</b><p>건물값을 해마다 비용으로 처리하면 소득세가 줄지만, 그만큼 나중에 팔 때 양도차익이 늘어납니다.</p></div>
+      <div class="card"><b class="h">임차인의 권리</b><p>기존 임대차계약과 보증금을 그대로 넘겨받습니다. 임차인은 최초 계약일부터 10년까지 계약 갱신을 요구할 수 있어, 직접 쓰거나 임대료를 올리는 데 제한이 있습니다.</p></div>
+      <div class="card"><b class="h">주택이 섞인 건물</b><p>1층은 상가, 위층은 주택인 건물은 주택 부분이 주택 수에 포함됩니다. 취득세도 주택과 상가 부분을 나누어 계산합니다.</p></div>
+    </div>
+
+    <h3 style="margin-top:22px">준비 서류</h3>
+    <ul class="docs">
+      <li>매매계약서 (토지값·건물값 구분, 부가가치세 조항)</li>
+      <li>포괄양수도 계약서 (해당하는 경우)</li>
+      <li>기존 임대차계약서 사본, 임차인 현황</li>
+      <li>파는 사람의 사업자등록증 사본</li>
+      <li>건축물대장, 등기사항증명서</li>
+      <li>사업자등록 신청서, 신분증</li>
+      <li>건물분 세금계산서</li>
+      <li>취득세 납부 영수증</li>
+      <li>법무사·중개수수료 영수증 (세금계산서)</li>
+      <li>대출 관련 서류</li>
     </ul>
   </section>
 
