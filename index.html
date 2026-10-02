@@ -9,7 +9,7 @@
 <style>
 html{margin:0}body{margin:0}
 
-/* layout: 한 열로 읽는 안내서. 상단 고정 바(검색·분류·PDF 저장) 아래로 질문 카드가 이어진다 */
+/* layout: 한 열로 읽는 안내서. 상단 고정 바(검색·분류) 아래로 질문 카드가 이어진다 */
 :root{
   --bg:#f6f9f6; --surface:#ffffff; --fg:#1e2a23; --muted:#5f6d64; --line:#d6e2d9;
   --green:#1b5e3a; --green-ink:#1b5e3a; --tint:#e8f3ea; --tint2:#f1f7f2; --on-green:#ffffff;
@@ -153,7 +153,6 @@ h3{font-size:15.5px;color:var(--green-ink);margin:0 0 6px}
       <button type="button" data-f="jeungyeo" aria-current="false">증여<small>집을 줄 때</small></button>
       <button type="button" data-f="sangsok" aria-current="false">상속<small>집을 물려받을 때</small></button>
     </nav>
-    <button class="save" id="save" type="button">PDF로 저장</button>
   </div>
 
   <section class="field" id="yangdo">
@@ -449,11 +448,10 @@ h3{font-size:15.5px;color:var(--green-ink);margin:0 0 6px}
   tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.f,false)})});
   var h=location.hash.slice(1); if(h) show(h,false);
   window.addEventListener('hashchange',function(){var x=location.hash.slice(1); if(x){var e=document.getElementById(x), c=e&&e.closest('.field'); if(c&&c.hidden) show(x,false);}});
-  // PDF 저장: 모든 답을 펼친 뒤 인쇄 창을 엽니다(대상에서 'PDF로 저장' 선택)
+  // 인쇄할 때는 모든 답을 펼칩니다
   var was=[];
   window.addEventListener('beforeprint',function(){was=items.map(function(d){return d.open});items.forEach(function(d){d.open=true})});
   window.addEventListener('afterprint',function(){items.forEach(function(d,i){d.open=was[i]})});
-  document.getElementById('save').addEventListener('click',function(){window.print()});
 })();
 </script>
 </body>
