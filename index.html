@@ -94,7 +94,7 @@ footer .d{color:var(--muted);font-size:14px;margin-top:2px;user-select:all}
 .seg button{font:inherit;font-size:14.5px;font-weight:700;border:0;background:transparent;color:var(--muted);padding:6px 22px;border-radius:999px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--green);color:var(--on-green)}
 .nav button[hidden]{display:none}
-.a a,.warn a,.sub2 a{color:var(--green-ink);font-weight:700}
+.a a,.warn a,.sub2 a,.steps a{color:var(--green-ink);font-weight:700}
 .nav button[disabled]{font-weight:500;opacity:.75}
 .nav small{font-weight:400;font-size:11.5px;margin-left:4px}
 .case{margin-top:26px;background:var(--green);color:var(--on-green);border-radius:14px;padding:20px 22px}
@@ -643,7 +643,7 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
       <div class="k">상속 편</div>
       <div class="t">집을 상속받게 되었습니다</div>
       <p>상속은 기한이 정해진 일이 많습니다. 3개월과 6개월, 두 기한을 먼저 기억하세요.</p>
-      <div class="toc"><a href="#i1">1 진행 절차</a><a href="#i2">2 세금 안내</a><a href="#i3">3 미리 따져볼 것</a><a href="#i4">4 준비 서류</a></div>
+      <div class="toc"><a href="#i1">1 진행 절차</a><a href="#i2">2 세금 안내</a><a href="#i3">3 함께 상속받을 때</a><a href="#i4">4 미리 따져볼 것</a><a href="#i5">5 준비 서류</a></div>
     </div>
 
     <h2 id="i1"><span class="no">1</span>진행 절차</h2>
@@ -652,7 +652,7 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
       <li><span class="c">1</span><div><span class="h">사망신고</span><span class="when">사망을 안 날부터 1개월 이내</span><p>주민센터나 시·구청에 신고합니다.</p></div></li>
       <li><span class="c">2</span><div><span class="h">재산과 빚 조회</span><span class="when">사망일이 속한 달의 말일부터 1년 이내</span><p>안심상속 원스톱 서비스를 신청하면 고인의 예금, 대출, 보험, 부동산, 세금 체납 등을 한 번에 조회할 수 있습니다. 사망신고와 함께 신청하시면 편합니다. 금융거래 조회 결과는 신청 후 2~3주 뒤에 나오고, <b>신청일부터 3개월이 지나면 삭제</b>됩니다. 5번까지만 볼 수 있으니 볼 때마다 저장해 두세요.</p></div></li>
       <li><span class="c">3</span><div><span class="h">상속받을지 결정</span><span class="when">상속을 안 날부터 3개월 이내</span><p>빚이 재산보다 많으면 가정법원에 상속포기나 한정승인을 신청합니다. 기한을 넘기면 빚까지 모두 물려받습니다.</p></div></li>
-      <li><span class="c">4</span><div><span class="h">상속재산 나누기</span><p>상속인 모두가 합의하여 상속재산분할협의서를 작성합니다. 누가 집을 받느냐에 따라 상속세와 이후 양도세가 달라집니다.</p></div></li>
+      <li><span class="c">4</span><div><span class="h">상속재산 나누기</span><p>상속인 모두가 합의하여 상속재산분할협의서를 작성합니다. 누가 집을 받느냐에 따라 상속세와 이후 양도세가 달라집니다. 지분으로 나누어 받으면 청약·대출 자격에도 영향이 있으니 <a href="#i3">함께 상속받을 때</a>를 먼저 보세요.</p></div></li>
       <li><span class="c">5</span><div><span class="h">취득세 신고와 상속 등기</span><span class="when">사망일이 속한 달의 말일부터 6개월 이내</span><p>집을 받는 상속인이 취득세를 신고·납부하고 등기를 이전합니다.</p></div></li>
       <li><span class="c">6</span><div><span class="h">상속세 신고·납부</span><span class="when">사망일이 속한 달의 말일부터 6개월 이내</span><p>고인의 주소지 세무서에 신고합니다. 기한 안에 신고하면 세액의 3%를 공제받습니다. 낼 세금이 없어도 신고해 두면 나중에 집을 팔 때 취득가액을 인정받는 근거가 됩니다.</p></div></li>
       <li><span class="c">7</span><div><span class="h">세무서의 결정</span><span class="when">신고기한부터 9개월 이내</span><p>상속세는 신고로 끝나지 않고 세무서가 조사하여 확정합니다. 고인의 최근 10년 금융거래를 확인하는 경우가 많습니다.</p></div></li>
@@ -691,7 +691,32 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     </ul>
     <div class="note"><b>공제 확대는 아직 확정되지 않았습니다.</b> 일괄공제와 배우자공제를 늘리는 방안이 논의되고 있지만, 2026년 10월 현재 시행 중인 금액은 위 표와 같습니다.</div>
 
-    <h2 id="i3"><span class="no">3</span>미리 따져볼 것</h2>
+    <h2 id="i3"><span class="no">3</span>여러 명이 함께 상속받을 때</h2>
+    <p class="sub2">집 한 채를 지분으로 나누어 받으면, 그 집이 누구의 주택으로 계산되는지가 사람마다 달라집니다. 나누기 전에 확인하세요.</p>
+    <div class="tw"><table><tr><th>세금</th><th>지분이 가장 큰 상속인</th><th>지분이 작은 상속인</th></tr>
+    <tr><td>양도소득세<br>(다른 집을 팔 때)</td><td>상속받은 집이 <b>그 사람의 주택</b>으로 계산됨</td><td>주택 수에서 <b>제외</b>. 자기 집을 팔 때 비과세 판단에 영향 없음</td></tr>
+    <tr><td>취득세<br>(다른 집을 살 때)</td><td>그 사람의 주택으로 계산됨. 다만 상속 후 5년간은 제외</td><td>주택 수에서 제외</td></tr>
+    <tr><td>종합부동산세</td><td>상속 후 5년간 주택 수에서 제외</td><td>지분이 40% 이하이거나 지분 가액이 수도권 6억원(그 밖 3억원) 이하이면 기간 제한 없이 제외</td></tr></table></div>
+    <ul style="margin:10px 0 0;padding-left:20px;font-size:14.8px">
+      <li><b>지분이 같으면</b> 그 집에 살고 있는 사람, 그다음은 나이가 가장 많은 사람의 주택으로 봅니다.</li>
+      <li><b>이미 집이 있는 상속인</b>은 작은 지분을 받으면 자기 집의 비과세에 영향이 없습니다. 큰 지분을 받으면 기존 집을 팔 때 상속주택 특례 요건을 따로 확인해야 합니다.</li>
+      <li><b>집이 없는 상속인</b>이 큰 지분을 받으면 그 사람의 1주택이 되고, 취득세도 낮은 세율(0.8%)이 적용될 수 있습니다.</li>
+    </ul>
+
+    <div class="warn"><b>청년 자녀가 작은 지분을 받는 경우 꼭 미리 확인하세요.</b> 세금에서는 작은 지분이 주택 수에서 빠지지만, 청약·대출·청년 지원 제도에서는 <b>지분이 조금만 있어도 집이 있는 사람</b>으로 봅니다. 한번 등기하면 아래 혜택을 놓칠 수 있습니다.</div>
+    <div class="tw"><table><tr><th>제도</th><th>작은 지분을 받았을 때</th></tr>
+    <tr><td>아파트 청약 (무주택 자격)</td><td>무주택 자격을 잃음. 부적격 통보를 받은 날부터 3개월 안에 지분을 처분하면 무주택으로 인정</td></tr>
+    <tr><td>생애최초·신혼부부 특별공급</td><td>지분을 가지고 있으면 신청할 수 없음. 위와 같이 3개월 안에 처분하면 인정</td></tr>
+    <tr><td>생애최초 주택 취득세 감면</td><td>집을 가진 적이 있으면 받지 못함. 상속받은 지분을 모두 처분한 경우는 예외로 인정</td></tr>
+    <tr><td>청년 주택드림 청약통장</td><td>가입하는 날 집이 없어야 가입할 수 있음</td></tr>
+    <tr><td>디딤돌·버팀목 등 정책 대출,<br>청년 월세 지원</td><td>대부분 무주택이 조건이라 대상에서 제외될 수 있음</td></tr></table></div>
+    <ul style="margin:10px 0 0;padding-left:20px;font-size:14.8px">
+      <li><b>가장 확실한 방법</b>은 재산을 나눌 때 청년 자녀는 집 지분 대신 예금 등 다른 재산을 받는 것입니다. 상속재산분할협의서를 쓰기 전에 정해야 합니다.</li>
+      <li>이미 지분으로 등기했다면, 상속세 신고기한(6개월) 안에 협의를 다시 해서 지분을 조정할 수 있습니다. 기한이 지난 뒤에 넘기면 증여세가 나옵니다.</li>
+      <li>제도마다 요건이 다르고 자주 바뀝니다. 청약은 청약홈과 입주자모집공고, 대출과 통장은 취급 은행에서 꼭 확인하세요.</li>
+    </ul>
+
+    <h2 id="i4"><span class="no">4</span>미리 따져볼 것</h2>
     <p class="sub2">재산을 나누고 신고하기 전에 확인하실 내용입니다.</p>
     <div class="grid2">
       <div class="card"><b class="h">10년 안에 받은 증여</b><p>고인이 돌아가시기 전 10년 안에 상속인에게 준 재산은 상속재산에 다시 더합니다. 상속인이 아닌 분(손주, 며느리, 사위 등)에게 준 것은 5년입니다.</p></div>
@@ -704,7 +729,7 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
       <div class="card"><b class="h">세금 낼 현금이 부족하면</b><p>세액이 2,000만원을 넘으면 담보를 제공하고 최대 10년에 걸쳐 나누어 낼 수 있습니다(연부연납).</p></div>
     </div>
 
-    <h2 id="i4"><span class="no">4</span>준비 서류</h2>
+    <h2 id="i5"><span class="no">5</span>준비 서류</h2>
     <p class="sub2">등기와 상속세 신고에 필요한 서류입니다.</p>
     <ul class="docs">
       <li>사망진단서 또는 시체검안서</li>
