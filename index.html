@@ -21,23 +21,39 @@ html{margin:0}body{margin:0}
 
 /* layout: 한 열로 읽는 안내서. 상단 고정 바(검색·분류) 아래로 질문 카드가 이어진다 */
 :root{
-  --bg:#f6f9f6; --surface:#ffffff; --fg:#1e2a23; --muted:#5f6d64; --line:#d6e2d9;
-  --green:#1b5e3a; --green-ink:#1b5e3a; --tint:#e8f3ea; --tint2:#f1f7f2; --on-green:#ffffff;
-  --plan-fg:#9a5a17; --plan-line:#d9a15f; --plan-bg:#fdf6ec;
+  --bg:#FBFCFA; --surface:#ffffff; --fg:#22302A; --muted:#5A6B62; --line:#D8E4DC;
+  --green:#1E5A3A; --green-2:#2E7D4F; --green-ink:#1E5A3A; --tint:#EAF3ED; --tint2:#F3F8F4; --on-green:#ffffff;
+  --plan-fg:#8A6520; --plan-line:#B98A2F; --plan-bg:#FAF4E6; --hero-lede:#E4F0E8;
   --sans:"Noto Sans KR","Noto Sans CJK KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
   --serif:"Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo",Georgia,serif;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#101612; --surface:#18211b; --fg:#e6eee8; --muted:#9db0a3; --line:#2c3a31;
-  --green:#2f8a59; --green-ink:#8fd3a8; --tint:#1f2e25; --tint2:#1a251e; --on-green:#ffffff;
-  --plan-fg:#e9b777; --plan-line:#7a5a30; --plan-bg:#2a2217; color-scheme:dark } }
+  --green:#1E5A3A; --green-2:#2E7D4F; --green-ink:#8fd3a8; --tint:#1f2e25; --tint2:#1a251e; --on-green:#ffffff;
+  --plan-fg:#e9b777; --plan-line:#7a5a30; --plan-bg:#2a2217; --hero-lede:#E4F0E8; color-scheme:dark } }
 :root[data-theme="dark"]{
   --bg:#101612; --surface:#18211b; --fg:#e6eee8; --muted:#9db0a3; --line:#2c3a31;
-  --green:#2f8a59; --green-ink:#8fd3a8; --tint:#1f2e25; --tint2:#1a251e; --on-green:#ffffff;
-  --plan-fg:#e9b777; --plan-line:#7a5a30; --plan-bg:#2a2217; color-scheme:dark }
+  --green:#1E5A3A; --green-2:#2E7D4F; --green-ink:#8fd3a8; --tint:#1f2e25; --tint2:#1a251e; --on-green:#ffffff;
+  --plan-fg:#e9b777; --plan-line:#7a5a30; --plan-bg:#2a2217; --hero-lede:#E4F0E8; color-scheme:dark }
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15.5px;line-height:1.7;word-break:keep-all}
-.wrap{max-width:780px;margin:0 auto;padding-inline:18px;padding-block:28px 56px}
+.wrap{max-width:960px;margin:0 auto;padding-inline:20px;padding-block:8px 56px}
+.site-head{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.site-head .in{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:700;font-size:16.8px;color:var(--green-ink);text-decoration:none}
+.head-nav{display:flex;gap:18px;font-size:14.7px}
+.head-nav a{color:var(--muted);text-decoration:none}
+.head-nav a:hover,.head-nav a[aria-current="page"]{color:var(--green-ink)}
+.head-nav a[aria-current="page"]{font-weight:700}
+@media(max-width:640px){.head-nav{display:none}}
+.hero{background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 78%);color:var(--on-green);padding:52px 0 44px}
+.hero .in{max-width:960px;margin:0 auto;padding:0 20px}
+.hero h1{color:var(--on-green);margin:0;font-size:clamp(27px,4.4vw,41px);line-height:1.4}
+.hero .lede{color:var(--hero-lede);margin-top:16px;font-size:16.8px;line-height:1.9;max-width:38em}
+.hero-cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:6px;padding:11px 20px;font-weight:700;font-size:15.5px;text-decoration:none}
+.btn-light{background:#fff;color:#1E5A3A}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.7);color:#fff}
 header .firm{font-weight:700;color:var(--green-ink);font-size:14px;letter-spacing:.02em}
 h1{font-family:var(--serif);font-size:clamp(26px,5.2vw,36px);line-height:1.3;margin:10px 0 8px;color:var(--green-ink);text-wrap:balance}
 .lede{color:var(--muted);margin:0;max-width:60ch}
@@ -81,7 +97,8 @@ h2{font-size:18px;color:var(--green-ink);margin:36px 0 12px}
 .tips div{background:var(--tint);border-radius:12px;padding:14px 16px;font-size:14.5px;line-height:1.65}
 .tips b{display:block;color:var(--green-ink);font-size:15.5px;margin-bottom:2px}
 .disc{font-size:12.5px;color:var(--muted);margin-top:22px;line-height:1.7}
-footer{margin-top:28px;border-top:2px solid var(--green-ink);padding-top:16px;text-align:center}
+footer{margin-top:32px;border-top:1px solid var(--line);padding-top:22px;text-align:center;color:var(--muted);font-size:14px;line-height:1.9}
+footer a{color:var(--green-2);text-decoration:none}
 footer .n{font-family:var(--serif);font-weight:700;font-size:18px;color:var(--green-ink)}
 footer .d{color:var(--muted);font-size:14px;margin-top:2px;user-select:all}
 
@@ -97,14 +114,14 @@ footer .d{color:var(--muted);font-size:14px;margin-top:2px;user-select:all}
 .a a,.warn a,.sub2 a,.steps a{color:var(--green-ink);font-weight:700}
 .nav button[disabled]{font-weight:500;opacity:.75}
 .nav small{font-weight:400;font-size:11.5px;margin-left:4px}
-.case{margin-top:26px;background:var(--green);color:var(--on-green);border-radius:14px;padding:20px 22px}
-.case .k{font-size:13px;opacity:.85}
-.case .t{font-family:var(--serif);font-size:clamp(22px,4.4vw,28px);font-weight:700;line-height:1.35;margin-top:2px}
-.case p{margin:6px 0 0;font-size:14.5px;opacity:.92;max-width:58ch}
+.case{margin-top:22px;background:var(--tint);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.case .k{font-size:13.5px;font-weight:700;color:var(--green-2)}
+.case .t{font-family:var(--serif);font-size:clamp(22px,4.4vw,28px);font-weight:700;line-height:1.35;margin-top:2px;color:var(--green-ink)}
+.case p{margin:6px 0 0;font-size:15px;color:var(--muted);max-width:58ch}
 .toc{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.toc a{font-size:13.5px;color:var(--on-green);border:1px solid rgba(255,255,255,.45);border-radius:99px;padding:3px 13px;text-decoration:none}
-.toc a:hover{background:rgba(255,255,255,.15)}
-h2{scroll-margin-top:16px}
+.toc a{font-size:13.5px;color:var(--green-ink);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:3px 13px;text-decoration:none}
+.toc a:hover{border-color:var(--green-2)}
+h2,.field{scroll-margin-top:72px}
 h2 .no{font-family:var(--serif);margin-right:8px}
 .sub2{color:var(--muted);margin:-6px 0 14px;font-size:14.5px}
 .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;counter-reset:step}
@@ -147,7 +164,7 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
   html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{font-size:10.5pt;line-height:1.6}
   .wrap{max-width:none;padding:0}
-  .navrow,.tools,.toc,.chips,.save,.totop,#msg,.none{display:none!important}
+  .navrow,.tools,.toc,.chips,.save,.totop,.site-head,.hero-cta,#msg,.none{display:none!important}
   details{break-inside:avoid}
   details[hidden]{display:block!important}
   summary::after{display:none}
@@ -162,12 +179,29 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="firm">원제우세무사사무소</div>
+<header class="site-head">
+  <div class="in">
+    <a class="brand" href="https://taxmancall.com/">원제우세무사사무소</a>
+    <nav class="head-nav" aria-label="관련 페이지">
+      <a href="https://taxmancall.com/">홈</a>
+      <a href="https://taxmancall.com/wealth-lifecycle/">자산의 일생</a>
+      <a href="https://taxmancall.com/tax-guide/" aria-current="page">재산 안내서</a>
+      <a href="https://taxmancall.com/gift-tax1.0/">증여세 안내</a>
+      <a href="https://taxmancall.com/inheritance-tax/">상속세 안내</a>
+    </nav>
+  </div>
+</header>
+<div class="hero">
+  <div class="in">
     <h1>2026년 재산 종합 안내서</h1>
     <p class="lede">집이나 상가를 사고, 팔고, 증여하고, 상속받을 때의 절차와 세금, 미리 챙기실 것을 쉬운 말로 정리했습니다.</p>
-  </header>
+    <div class="hero-cta">
+      <a class="btn btn-light" href="tel:0323214521">032-321-4521 상담 전화</a>
+      <a class="btn btn-ghost" href="https://taxmancall.com/wealth-lifecycle/">자산의 일생 살펴보기</a>
+    </div>
+  </div>
+</div>
+<div class="wrap">
 
   <!-- 분야 메뉴: 분야를 추가할 때 버튼(data-f)과 같은 id의 <section class="field">를 하나씩 더 만듭니다 -->
   <div class="navrow" style="flex-direction:column;align-items:flex-start">
@@ -895,7 +929,11 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
   </section>
 
   <p class="disc">※ 2026년 10월 1일 현재 법령과 정부 발표를 바탕으로, 개인을 기준으로 정리한 일반적인 안내입니다. 법인은 위쪽의 '법인'을 눌러 법인 편을 참고하세요. '정부안'으로 표시한 내용은 국회 심의 과정에서 바뀔 수 있으며, 실제 세금은 개별 사정에 따라 달라지므로 계약이나 등기 전에 반드시 상담받으시기 바랍니다.</p>
-  <footer><div class="n">원제우세무사사무소</div><div class="d">032-321-4521 · taxmancall.com</div></footer>
+  <footer>
+    원제우세무사사무소 · 경기도 부천시 소향로 135, 3층<br>
+    전화 <a href="tel:0323214521">032-321-4521</a> · 팩스 02-6280-4521 · <a href="https://taxmancall.com/">taxmancall.com</a><br>
+    본 페이지는 상담용 참고자료로, 실제 세액은 개별 사실관계에 따라 달라질 수 있습니다.
+  </footer>
 </div>
 <button class="totop" id="totop" type="button" aria-label="맨 위로" title="맨 위로" hidden>↑</button>
 <script>
