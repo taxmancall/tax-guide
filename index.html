@@ -45,7 +45,12 @@ body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15.5
 .head-nav a{color:var(--muted);text-decoration:none}
 .head-nav a:hover,.head-nav a[aria-current="page"]{color:var(--green-ink)}
 .head-nav a[aria-current="page"]{font-weight:700}
-@media(max-width:640px){.head-nav{display:none}}
+@media(max-width:640px){
+  .site-head .in{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 20px 8px}
+  .head-nav{width:100%;gap:18px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding-bottom:2px}
+  .head-nav::-webkit-scrollbar{display:none}
+  h2,.field{scroll-margin-top:96px}
+}
 .hero{background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 78%);color:var(--on-green);padding:52px 0 44px}
 .hero .in{max-width:960px;margin:0 auto;padding:0 20px}
 .hero h1{color:var(--on-green);margin:0;font-size:clamp(27px,4.4vw,41px);line-height:1.4}
