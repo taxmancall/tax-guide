@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>같은 집인데 세금이 달라지는 이유 | 원제우세무사사무소</title>
+<meta name="description" content="집을 사고, 팔고, 증여하고, 상속받기 전에 알고 하면 아끼는 것들을 상황별로 정리했습니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="원제우세무사사무소">
+<meta property="og:title" content="같은 집, 같은 가격인데 세금은 몇천만 원씩 달라집니다">
+<meta property="og:description" content="집을 사고, 팔고, 증여하고, 상속받기 전에 알고 하면 아끼는 것들을 상황별로 정리했습니다.">
+<meta property="og:url" content="https://taxmancall.com/tax-guide/start/">
+<meta property="og:image" content="https://taxmancall.com/tax-guide/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://taxmancall.com/tax-guide/start/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap">
+<style>
+/* layout: 한 화면에 결론(계약 전에 연락)과 상황 고르기. 자세한 내용은 재산 안내서로 넘긴다 */
+:root{
+  --bg:#FBFCFA; --surface:#ffffff; --fg:#22302A; --muted:#5A6B62; --line:#D8E4DC;
+  --green:#1E5A3A; --green-2:#2E7D4F; --green-ink:#1E5A3A; --tint:#EAF3ED; --on-green:#ffffff;
+  --gold:#8A6520; --gold-line:#B98A2F; --gold-bg:#FAF4E6; --hero-lede:#E4F0E8;
+  --sans:"Noto Sans KR","Noto Sans CJK KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --serif:"Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo",Georgia,serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#101612; --surface:#18211b; --fg:#e6eee8; --muted:#9db0a3; --line:#2c3a31;
+  --green-ink:#8fd3a8; --tint:#1f2e25; --gold:#e9b777; --gold-line:#7a5a30; --gold-bg:#2a2217; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#101612; --surface:#18211b; --fg:#e6eee8; --muted:#9db0a3; --line:#2c3a31;
+  --green-ink:#8fd3a8; --tint:#1f2e25; --gold:#e9b777; --gold-line:#7a5a30; --gold-bg:#2a2217; color-scheme:dark }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all}
+a{color:var(--green-2);text-decoration:none}
+a:focus-visible{outline:3px solid var(--gold-line);outline-offset:2px}
+.in{max-width:960px;margin:0 auto;padding:0 20px}
+.site-head{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.site-head .in{padding-top:14px;padding-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:700;font-size:16.8px;color:var(--green-ink)}
+.head-nav{display:flex;gap:18px;font-size:14.7px}
+.head-nav a{color:var(--muted)}
+.head-nav a[aria-current="page"]{color:var(--green-ink);font-weight:700}
+@media(max-width:640px){
+  .site-head .in{flex-direction:column;align-items:flex-start;gap:6px;padding-top:10px;padding-bottom:8px}
+  .head-nav{width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding-bottom:2px}
+  .head-nav::-webkit-scrollbar{display:none}
+}
+.hero{background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 78%);color:var(--on-green);padding:44px 0 40px}
+.hero h1{font-family:var(--serif);font-size:clamp(26px,5vw,38px);line-height:1.4;text-wrap:balance}
+.hero p{color:var(--hero-lede);margin-top:14px;font-size:17px;max-width:34em}
+.btn{display:inline-block;margin-top:22px;border-radius:6px;padding:12px 22px;font-weight:700;font-size:16px;background:#fff;color:#1E5A3A}
+main{padding-block:30px 48px}
+.ask{font-family:var(--serif);font-size:22px;color:var(--green-ink);font-weight:700}
+.ask+p{color:var(--muted);margin-top:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:18px}
+.card{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;color:var(--fg);min-width:0}
+.card:hover{border-color:var(--green-2)}
+.when{align-self:flex-start;font-size:13px;font-weight:700;color:var(--green-2);background:var(--tint);border-radius:99px;padding:1px 12px}
+.card h2{font-family:var(--serif);font-size:19.5px;color:var(--fg);line-height:1.5;font-weight:700}
+.card h2 b{color:var(--green-ink);background:linear-gradient(transparent 62%,var(--tint) 62%)}
+.card p{font-size:15px;color:var(--muted)}
+.more{margin-top:auto;padding-top:4px;font-weight:700;font-size:14.5px;color:var(--green-2)}
+.rules{margin-top:34px;background:var(--gold-bg);border:1px solid var(--gold-line);border-radius:10px;padding:18px 20px}
+.rules h2{font-size:17px;color:var(--gold)}
+.rules ol{margin-top:8px;padding-left:22px}
+.rules li+li{margin-top:4px}
+.next{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 22px;font-weight:700}
+footer{border-top:1px solid var(--line);padding:22px 20px 34px;text-align:center;color:var(--muted);font-size:14px;line-height:1.9}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="in">
+    <a class="brand" href="https://taxmancall.com/">원제우세무사사무소</a>
+    <nav class="head-nav" aria-label="관련 페이지">
+      <a href="https://taxmancall.com/tax-guide/start/" aria-current="page">먼저 보실 것</a>
+      <a href="https://taxmancall.com/tax-guide/">재산 안내서</a>
+      <a href="https://taxmancall.com/wealth-lifecycle/">자산의 일생</a>
+    </nav>
+  </div>
+</header>
+<div class="hero">
+  <div class="in">
+    <h1>같은 집, 같은 가격인데 세금은 몇천만 원씩 달라집니다</h1>
+    <p>언제, 누구 명의로, 어떤 순서로 하느냐의 차이입니다. 세금은 계약서를 쓰는 순간 대부분 정해지니, 계약 전에 먼저 확인하세요.</p>
+    <a class="btn" href="tel:0323214521">032-321-4521 상담 전화</a>
+  </div>
+</div>
+<main class="in">
+  <p class="ask">어떤 일을 앞두고 계신가요?</p>
+  <p>알고 하면 아끼고, 모르고 하면 더 내는 것들입니다. 눌러서 자세히 보세요.</p>
+  <div class="grid">
+    <a class="card" href="https://taxmancall.com/tax-guide/#chwideuk">
+      <span class="when">집을 살 때</span>
+      <h2>6억원짜리 집, 살 때 내는 세금이 <b>660만원</b>일 수도 <b>5,040만원</b>일 수도 있습니다</h2>
+      <p>세대의 주택 수와 지역에 따라 달라집니다. 누구 명의로, 어떤 돈으로 살지도 계약 전에 정해야 합니다.</p>
+      <span class="more">절차와 세금 자세히 보기 →</span>
+    </a>
+    <a class="card" href="https://taxmancall.com/tax-guide/#yangdo">
+      <span class="when">집을 팔 때</span>
+      <h2><b>12억원까지 세금이 없을</b> 수도, 하루 차이로 전부 과세될 수도 있습니다</h2>
+      <p>보유·거주 기간과 잔금일로 갈립니다. 집이 두 채라면 어느 집을 먼저 파느냐도 중요합니다.</p>
+      <span class="more">절차와 세금 자세히 보기 →</span>
+    </a>
+    <a class="card" href="https://taxmancall.com/tax-guide/#jeungyeo">
+      <span class="when">자녀에게 줄 때</span>
+      <h2>결혼하는 자녀에게는 <b>1억 5,000만원까지</b> 증여세가 없습니다</h2>
+      <p>집으로 줘도 됩니다. 다만 취득세 등은 따로 내야 하고, 대출을 함께 넘기려면 자녀에게 갚을 소득이 있어야 합니다.</p>
+      <span class="more">절차와 세금 자세히 보기 →</span>
+    </a>
+    <a class="card" href="https://taxmancall.com/tax-guide/#sangsok">
+      <span class="when">상속받을 때</span>
+      <h2>배우자와 자녀가 있으면 <b>10억원까지</b> 상속세가 없습니다</h2>
+      <p>하지만 3개월 안에 결정하지 않으면 빚까지 물려받고, 집을 지분으로 나누면 자녀의 청약 자격이 사라질 수 있습니다.</p>
+      <span class="more">절차와 세금 자세히 보기 →</span>
+    </a>
+    <a class="card" href="https://taxmancall.com/tax-guide/#sangga">
+      <span class="when">상가를 살 때</span>
+      <h2>건물값의 10%인 부가가치세, <b>돌려받을 수 있습니다</b></h2>
+      <p>건물값이 5억원이면 5,000만원입니다. 돈을 보낼 때마다, 세금계산서를 받을 때마다 알려 주셔야 제때 환급됩니다.</p>
+      <span class="more">절차와 세금 자세히 보기 →</span>
+    </a>
+    <a class="card" href="https://taxmancall.com/tax-guide/#imdae">
+      <span class="when">임대할 집을 살 때</span>
+      <h2>임대주택 등록, 혜택만 보고 하면 <b>10년이 묶입니다</b></h2>
+      <p>아파트는 등록이 안 되고, 임대료를 5% 넘게 올리면 혜택을 잃습니다. 등록하기 전에 따져 보세요.</p>
+      <span class="more">절차와 세금 자세히 보기 →</span>
+    </a>
+    <a class="card" href="https://taxmancall.com/tax-guide/#bjutaek">
+      <span class="when">법인 명의로 살 때</span>
+      <h2>법인으로 집을 사면 살 때만 <b>집값의 12.4%</b>를 냅니다</h2>
+      <p>대표가 살거나 별장으로 쓰면 불이익이 더해집니다. 상가는 본점 위치에 따라 취득 때 내는 세금이 두 배가 됩니다.</p>
+      <span class="more">절차와 세금 자세히 보기 →</span>
+    </a>
+  </div>
+
+  <div class="rules">
+    <h2>어떤 경우든 꼭 지키실 세 가지</h2>
+    <ol>
+      <li><b>계약 전에 상담하세요.</b> 잔금일 하루 차이로 세금이 달라지기도 합니다.</li>
+      <li><b>영수증과 이체 내역을 버리지 마세요.</b> 취득세, 수수료, 공사비가 모두 나중에 경비가 됩니다.</li>
+      <li><b>규제지역과 제도는 계약 직전에 다시 확인하세요.</b> 조정대상지역과 세법은 수시로 바뀝니다.</li>
+    </ol>
+  </div>
+
+  <p class="next">
+    <a href="https://taxmancall.com/tax-guide/">재산 안내서 전체 보기 →</a>
+    <a href="https://taxmancall.com/wealth-lifecycle/">자산의 일생 살펴보기 →</a>
+  </p>
+</main>
+<footer>
+  원제우세무사사무소 · 경기도 부천시 소향로 135, 3층<br>
+  전화 <a href="tel:0323214521">032-321-4521</a> · 팩스 02-6280-4521 · <a href="https://taxmancall.com/">taxmancall.com</a><br>
+  본 페이지는 상담용 참고자료로, 실제 세액은 개별 사실관계에 따라 달라질 수 있습니다.
+</footer>
+</body>
+</html>
