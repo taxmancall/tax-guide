@@ -107,7 +107,9 @@ footer .d{color:var(--muted);font-size:14px;margin-top:2px;user-select:all}
 h2{scroll-margin-top:16px}
 h2 .no{font-family:var(--serif);margin-right:8px}
 .sub2{color:var(--muted);margin:-6px 0 14px;font-size:14.5px}
-.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;counter-reset:step}
+.steps>li{counter-increment:step}
+.steps .c::before{content:counter(step)}
 .steps>li{display:grid;grid-template-columns:34px 1fr;gap:14px;position:relative;padding-bottom:18px}
 .steps>li::before{content:"";position:absolute;left:16.5px;top:34px;bottom:0;width:1.5px;background:var(--line)}
 .steps>li:last-child{padding-bottom:0}.steps>li:last-child::before{display:none}
@@ -174,14 +176,14 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
       <button type="button" data-seg="c" aria-pressed="false">법인</button>
     </div>
     <nav class="nav" aria-label="분야">
-      <button type="button" data-g="p" data-f="chwideuk" aria-current="true">주택 취득<small>집을 살 때</small></button>
-      <button type="button" data-g="p" data-f="sangga" aria-current="false">상가 취득<small>상가를 살 때</small></button>
-      <button type="button" data-g="p" data-f="imdae" aria-current="false">임대주택 취득<small>임대할 집을 살 때</small></button>
-      <button type="button" data-g="p" data-f="yangdo" aria-current="false">양도<small>집을 팔 때</small></button>
-      <button type="button" data-g="p" data-f="jeungyeo" aria-current="false">증여<small>집을 줄 때</small></button>
-      <button type="button" data-g="p" data-f="sangsok" aria-current="false">상속<small>집을 물려받을 때</small></button>
-      <button type="button" data-g="c" data-f="bjutaek" aria-current="false" hidden>주택 취득<small>법인으로 집을 살 때</small></button>
-      <button type="button" data-g="c" data-f="bsangga" aria-current="false" hidden>상가 취득<small>법인으로 상가를 살 때</small></button>
+      <button type="button" data-g="p" data-f="chwideuk" aria-current="true">주택 취득 <small>집을 살 때</small></button>
+      <button type="button" data-g="p" data-f="sangga" aria-current="false">상가 취득 <small>상가를 살 때</small></button>
+      <button type="button" data-g="p" data-f="imdae" aria-current="false">임대주택 취득 <small>임대할 집을 살 때</small></button>
+      <button type="button" data-g="p" data-f="yangdo" aria-current="false">양도 <small>집을 팔 때</small></button>
+      <button type="button" data-g="p" data-f="jeungyeo" aria-current="false">증여 <small>집을 줄 때</small></button>
+      <button type="button" data-g="p" data-f="sangsok" aria-current="false">상속 <small>집을 물려받을 때</small></button>
+      <button type="button" data-g="c" data-f="bjutaek" aria-current="false" hidden>주택 취득 <small>법인으로 집을 살 때</small></button>
+      <button type="button" data-g="c" data-f="bsangga" aria-current="false" hidden>상가 취득 <small>법인으로 상가를 살 때</small></button>
     </nav>
   </div>
 
@@ -196,13 +198,13 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <h2 id="b1"><span class="no">1</span>진행 절차</h2>
     <p class="sub2">계약 전 점검부터 전입까지 일곱 단계입니다.</p>
     <ol class="steps">
-      <li><span class="c">1</span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>집값을 어떤 돈으로 치를지, 누구 명의로 살지, 세대 전체의 주택이 몇 채가 되는지 확인합니다. 이 세 가지로 취득세와 이후 세금이 정해집니다.</p></div></li>
-      <li><span class="c">2</span><div><span class="h">매매계약</span><p>계약서를 쓰고 계약금을 냅니다. 토지거래허가구역의 주택은 구청 허가를 먼저 받아야 계약할 수 있습니다.</p></div></li>
-      <li><span class="c">3</span><div><span class="h">부동산 거래신고와 자금조달계획서</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다. 대상 주택은 집값을 어떤 돈으로 마련하는지 적은 자금조달계획서를 함께 냅니다.</p></div></li>
-      <li><span class="c">4</span><div><span class="h">대출 실행과 잔금 준비</span><p>대출 한도와 실행일을 잔금일에 맞춥니다. 가족에게 빌리거나 받는 돈은 잔금 전에 차용증이나 증여세 신고로 정리해 둡니다.</p></div></li>
-      <li><span class="c">5</span><div><span class="h">잔금 지급</span><span class="when">취득일</span><p>잔금을 치른 날이 세법상 취득일입니다. 보유기간과 각종 기한을 이 날부터 계산합니다.</p></div></li>
-      <li><span class="c">6</span><div><span class="h">취득세 신고·납부와 소유권 이전 등기</span><span class="when">취득일부터 60일 이내</span><p>시·군·구청에 취득세를 신고·납부하고 등기를 이전합니다. 보통 잔금일에 법무사가 함께 처리합니다.</p></div></li>
-      <li><span class="c">7</span><div><span class="h">전입신고</span><p>실제로 이사하고 전입신고를 합니다. 거주기간은 나중에 비과세와 공제를 판단하는 기준이 됩니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>집값을 어떤 돈으로 치를지, 누구 명의로 살지, 세대 전체의 주택이 몇 채가 되는지 확인합니다. 이 세 가지로 취득세와 이후 세금이 정해집니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">매매계약</span><p>계약서를 쓰고 계약금을 냅니다. 토지거래허가구역의 주택은 구청 허가를 먼저 받아야 계약할 수 있습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">부동산 거래신고와 자금조달계획서</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다. 대상 주택은 집값을 어떤 돈으로 마련하는지 적은 자금조달계획서를 함께 냅니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">대출 실행과 잔금 준비</span><p>대출 한도와 실행일을 잔금일에 맞춥니다. 가족에게 빌리거나 받는 돈은 잔금 전에 차용증이나 증여세 신고로 정리해 둡니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">잔금 지급</span><span class="when">취득일</span><p>잔금을 치른 날이 세법상 취득일입니다. 보유기간과 각종 기한을 이 날부터 계산합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">취득세 신고·납부와 소유권 이전 등기</span><span class="when">취득일부터 60일 이내</span><p>시·군·구청에 취득세를 신고·납부하고 등기를 이전합니다. 보통 잔금일에 법무사가 함께 처리합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">전입신고</span><p>실제로 이사하고 전입신고를 합니다. 거주기간은 나중에 비과세와 공제를 판단하는 기준이 됩니다.</p></div></li>
     </ol>
 
     <h2 id="b2"><span class="no">2</span>세금 안내</h2>
@@ -314,13 +316,13 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <h2 id="c2"><span class="no">2</span>진행 절차</h2>
     <p class="sub2">계약 전 점검부터 임대 시작 후 신고까지 일곱 단계입니다.</p>
     <ol class="steps">
-      <li><span class="c">1</span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>임대차계약서와 임차인 현황, 건물 용도, 대출 가능 금액을 확인합니다. 파는 사람이 일반과세자인지, 부가가치세를 따로 받는지도 확인합니다.</p></div></li>
-      <li><span class="c">2</span><div><span class="h">매매계약</span><p>계약서에 토지값과 건물값을 나누어 적고, 부가가치세를 별도로 할지 포괄양수도로 할지 정합니다. 파는 사람의 임대사업을 그대로 이어받는 포괄양수도로 계약하면 부가가치세를 주고받고 환급받는 절차를 생략할 수 있습니다. 계약서에 '부가가치세 별도'가 없으면 매매대금에 포함된 것으로 봅니다.</p></div></li>
-      <li><span class="c">3</span><div><span class="h">사업자등록 신청</span><span class="when">계약 후 바로</span><p>세무서나 홈택스에서 부동산임대업으로 등록합니다. 부가가치세를 돌려받으려면 반드시 <b>일반과세자</b>로 등록해야 하며, 간이과세자와 면세사업자는 환급받지 못합니다.</p></div></li>
-      <li><span class="c">4</span><div><span class="h">부동산 거래신고</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다.</p></div></li>
-      <li><span class="c">5</span><div><span class="h">잔금 지급, 취득세 납부, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다. 건물분 세금계산서를 받아 둡니다.</p></div></li>
-      <li><span class="c">6</span><div><span class="h">부가가치세 환급 신청</span><span class="when">세금계산서를 받은 달의 다음 달 25일까지</span><p>건물분 부가가치세를 조기환급으로 신청하면 보통 신고기한부터 15일 안에 돌려받습니다.</p></div></li>
-      <li><span class="c">7</span><div><span class="h">임대 시작 후 신고</span><span class="when">매년</span><p>부가가치세는 1월과 7월에, 임대소득에 대한 종합소득세는 다음 해 5월에 신고합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>임대차계약서와 임차인 현황, 건물 용도, 대출 가능 금액을 확인합니다. 파는 사람이 일반과세자인지, 부가가치세를 따로 받는지도 확인합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">매매계약</span><p>계약서에 토지값과 건물값을 나누어 적고, 부가가치세를 별도로 할지 포괄양수도로 할지 정합니다. 파는 사람의 임대사업을 그대로 이어받는 포괄양수도로 계약하면 부가가치세를 주고받고 환급받는 절차를 생략할 수 있습니다. 계약서에 '부가가치세 별도'가 없으면 매매대금에 포함된 것으로 봅니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">사업자등록 신청</span><span class="when">계약 후 바로</span><p>세무서나 홈택스에서 부동산임대업으로 등록합니다. 부가가치세를 돌려받으려면 반드시 <b>일반과세자</b>로 등록해야 하며, 간이과세자와 면세사업자는 환급받지 못합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">부동산 거래신고</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">잔금 지급, 취득세 납부, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다. 건물분 세금계산서를 받아 둡니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">부가가치세 환급 신청</span><span class="when">세금계산서를 받은 달의 다음 달 25일까지</span><p>건물분 부가가치세를 조기환급으로 신청하면 보통 신고기한부터 15일 안에 돌려받습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">임대 시작 후 신고</span><span class="when">매년</span><p>부가가치세는 1월과 7월에, 임대소득에 대한 종합소득세는 다음 해 5월에 신고합니다.</p></div></li>
     </ol>
 
     <div class="warn"><b>돈을 보낼 때마다, 세금계산서를 받을 때마다 사무소에 꼭 알려 주세요.</b> 부가가치세 환급은 세금계산서를 받은 달에 맞춰 신청해야 합니다. "상가 샀어요"라는 말씀만으로는 저희가 날짜와 금액을 알 수 없어 환급 시기를 놓치게 됩니다.
@@ -391,14 +393,14 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <h2 id="r2"><span class="no">2</span>진행 절차</h2>
     <p class="sub2">시청·구청 문의부터 매년 하는 신고까지 여덟 단계입니다.</p>
     <ol class="steps">
-      <li><span class="c">1</span><div><span class="h">시청·구청에 먼저 문의</span><span class="when">계약 전</span><p>임대주택 등록을 생각하신다면, 집이 있는 곳의 시청·구청 콜센터에 전화해 <b>임대주택 담당자</b>와 먼저 통화하세요. 그 집이 등록 대상인지, 어떤 유형으로 등록할 수 있는지, 필요한 서류가 무엇인지 확인합니다. 부천시청은 1층 민원실에 임대주택 전담 창구가 따로 있습니다.</p></div></li>
-      <li><span class="c">2</span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>등록할 수 있는 집인지, 공시가격이 혜택 기준(수도권 6억원, 그 밖의 지역 3억원 이하) 안에 드는지, 10년간 팔지 않아도 되는지 확인합니다.</p></div></li>
-      <li><span class="c">3</span><div><span class="h">매매(분양)계약</span><p>계약서를 쓰고 계약금을 냅니다. 기존 임차인이 있으면 임대차계약 내용을 함께 확인합니다.</p></div></li>
-      <li><span class="c">4</span><div><span class="h">임대사업자 등록</span><span class="when">취득일부터 60일 이내</span><p>주소지 시·군·구청이나 렌트홈에서 신청합니다. 취득세 감면을 받으려면 이 기한을 지켜야 합니다.</p></div></li>
-      <li><span class="c">5</span><div><span class="h">세무서 사업자등록</span><span class="when">임대 시작일부터 20일 이내</span><p>렌트홈에서 구청 등록과 함께 신청할 수 있습니다.</p></div></li>
-      <li><span class="c">6</span><div><span class="h">잔금, 취득세, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다. 등록 임대주택이라는 사실을 등기부에 함께 적어야 합니다(부기등기).</p></div></li>
-      <li><span class="c">7</span><div><span class="h">임대차계약과 신고</span><span class="when">계약 후 3개월 이내</span><p>표준임대차계약서로 계약하고 시·군·구청에 신고합니다. 임대보증금 보증에도 가입합니다.</p></div></li>
-      <li><span class="c">8</span><div><span class="h">매년 하는 신고</span><span class="when">매년</span><p>2월에 사업장 현황신고, 5월에 임대소득 종합소득세 신고, 9월에 종합부동산세 합산배제 신고를 합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">시청·구청에 먼저 문의</span><span class="when">계약 전</span><p>임대주택 등록을 생각하신다면, 집이 있는 곳의 시청·구청 콜센터에 전화해 <b>임대주택 담당자</b>와 먼저 통화하세요. 그 집이 등록 대상인지, 어떤 유형으로 등록할 수 있는지, 필요한 서류가 무엇인지 확인합니다. 부천시청은 1층 민원실에 임대주택 전담 창구가 따로 있습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>등록할 수 있는 집인지, 공시가격이 혜택 기준(수도권 6억원, 그 밖의 지역 3억원 이하) 안에 드는지, 10년간 팔지 않아도 되는지 확인합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">매매(분양)계약</span><p>계약서를 쓰고 계약금을 냅니다. 기존 임차인이 있으면 임대차계약 내용을 함께 확인합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">임대사업자 등록</span><span class="when">취득일부터 60일 이내</span><p>주소지 시·군·구청이나 렌트홈에서 신청합니다. 취득세 감면을 받으려면 이 기한을 지켜야 합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">세무서 사업자등록</span><span class="when">임대 시작일부터 20일 이내</span><p>렌트홈에서 구청 등록과 함께 신청할 수 있습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">잔금, 취득세, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다. 등록 임대주택이라는 사실을 등기부에 함께 적어야 합니다(부기등기).</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">임대차계약과 신고</span><span class="when">계약 후 3개월 이내</span><p>표준임대차계약서로 계약하고 시·군·구청에 신고합니다. 임대보증금 보증에도 가입합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">매년 하는 신고</span><span class="when">매년</span><p>2월에 사업장 현황신고, 5월에 임대소득 종합소득세 신고, 9월에 종합부동산세 합산배제 신고를 합니다.</p></div></li>
     </ol>
 
     <h2 id="r3"><span class="no">3</span>혜택과 의무</h2>
@@ -463,12 +465,12 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <h2 id="y1"><span class="no">1</span>진행 절차</h2>
     <p class="sub2">계약부터 세금 납부까지 여섯 단계입니다.</p>
     <ol class="steps">
-      <li><span class="c">1</span><div><span class="h">계약 전 세금 점검</span><span class="when">계약 전</span><p>비과세가 되는지, 중과 대상인지, 예상 세금이 얼마인지 먼저 확인합니다. 잔금일을 언제로 잡느냐에 따라 세금이 달라질 수 있습니다.</p></div></li>
-      <li><span class="c">2</span><div><span class="h">매매계약</span><p>계약서를 쓰고 계약금을 받습니다. 토지거래허가구역의 주택은 구청 허가를 먼저 받아야 계약할 수 있습니다.</p></div></li>
-      <li><span class="c">3</span><div><span class="h">부동산 거래신고</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다. 중개사를 통한 거래는 중개사가 신고합니다.</p></div></li>
-      <li><span class="c">4</span><div><span class="h">잔금 수령과 소유권 이전</span><span class="when">양도일</span><p>잔금을 받은 날이 세법상 양도일입니다. 등기를 먼저 넘기면 등기 접수일이 양도일이 됩니다. 보유기간과 신고기한을 모두 이 날 기준으로 계산합니다.</p></div></li>
-      <li><span class="c">5</span><div><span class="h">양도소득세 신고·납부</span><span class="when">양도일이 속한 달의 말일부터 2개월 이내</span><p>예를 들어 9월 4일에 잔금을 받았다면 11월 30일까지입니다. 세금이 1,000만원을 넘으면 일부를 2개월 뒤에 나누어 낼 수 있습니다.</p></div></li>
-      <li><span class="c">6</span><div><span class="h">지방소득세 신고·납부</span><span class="when">양도소득세 신고기한부터 2개월 이내</span><p>양도소득세의 10%를 주소지 시·군·구에 따로 신고하고 냅니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">계약 전 세금 점검</span><span class="when">계약 전</span><p>비과세가 되는지, 중과 대상인지, 예상 세금이 얼마인지 먼저 확인합니다. 잔금일을 언제로 잡느냐에 따라 세금이 달라질 수 있습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">매매계약</span><p>계약서를 쓰고 계약금을 받습니다. 토지거래허가구역의 주택은 구청 허가를 먼저 받아야 계약할 수 있습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">부동산 거래신고</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다. 중개사를 통한 거래는 중개사가 신고합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">잔금 수령과 소유권 이전</span><span class="when">양도일</span><p>잔금을 받은 날이 세법상 양도일입니다. 등기를 먼저 넘기면 등기 접수일이 양도일이 됩니다. 보유기간과 신고기한을 모두 이 날 기준으로 계산합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">양도소득세 신고·납부</span><span class="when">양도일이 속한 달의 말일부터 2개월 이내</span><p>예를 들어 9월 4일에 잔금을 받았다면 11월 30일까지입니다. 세금이 1,000만원을 넘으면 일부를 2개월 뒤에 나누어 낼 수 있습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">지방소득세 신고·납부</span><span class="when">양도소득세 신고기한부터 2개월 이내</span><p>양도소득세의 10%를 주소지 시·군·구에 따로 신고하고 냅니다.</p></div></li>
     </ol>
     <p class="sub2" style="margin-top:14px">같은 해에 부동산을 두 건 이상 파셨다면, 다음 해 5월에 합산하여 확정신고를 한 번 더 합니다.</p>
 
@@ -510,46 +512,44 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
       <button class="chip" type="button" data-c="바뀔 예정" aria-pressed="false">바뀔 예정</button>
     </div>
     <div class="list" id="list" style="margin-top:14px">
-<details data-c="증여"><summary><span class="n">Q1</span><span class="t">배우자나 자녀에게 증여받은 집, 언제 팔아야 하나요?</span><span class="cat">증여</span></summary>
+<details data-c="증여"><summary><span class="n">Q1</span><span class="t">배우자나 자녀에게 증여받은 집, 언제 팔아야 하나요?</span><span class="cat">[증여]</span></summary>
       <div class="a"><p><b>증여받고 10년이 지난 뒤</b>에 파셔야 증여 당시 가액이 취득가액으로 인정됩니다. 그 전에 팔면 증여한 분이 처음 산 가격으로 양도차익을 계산합니다(이월과세).</p>
       <div class="tw"><table><tr><th>증여받은 시기</th><th>이월과세 기간</th></tr><tr><td>2022년 12월 31일까지</td><td>증여 후 5년</td></tr><tr><td>2023년 1월 1일부터</td><td><b>증여 후 10년</b></td></tr></table></div></div></details>
 
-    <details data-c="비과세"><summary><span class="n">Q2</span><span class="t">조정대상지역 집은 2년을 계속 살아야 비과세인가요?</span><span class="cat">비과세</span></summary>
+    <details data-c="비과세"><summary><span class="n">Q2</span><span class="t">조정대상지역 집은 2년을 계속 살아야 비과세인가요?</span><span class="cat">[비과세]</span></summary>
       <div class="a"><p>아닙니다. <b>보유하는 동안 합쳐서 2년</b>만 거주하시면 됩니다. 중간에 전세를 주었다가 다시 들어가 살아도 기간을 합산합니다.</p>
       <ul><li>거주요건은 <b>취득할 때 조정대상지역이었던 집</b>에만 있습니다(2017년 8월 3일 이후 취득분).</li><li>취득할 때 조정대상지역이 아니었다면, 나중에 지정되어도 2년 보유만으로 비과세가 가능합니다.</li><li>1세대 1주택이라도 양도가액 12억원 초과분은 과세됩니다.</li></ul></div></details>
 
-    <details data-c="중과·규제지역"><summary><span class="n">Q3</span><span class="t">집이 여러 채면 무조건 세금이 무거워지나요?</span><span class="cat">중과·규제지역</span></summary>
+    <details data-c="중과·규제지역"><summary><span class="n">Q3</span><span class="t">집이 여러 채면 무조건 세금이 무거워지나요?</span><span class="cat">[중과·규제지역]</span></summary>
       <div class="a"><p>아닙니다. <b>조정대상지역에 있는 집을 팔 때만</b> 중과됩니다. 조정대상지역이 아닌 집은 주택 수가 많아도 일반세율과 장기보유특별공제가 그대로 적용됩니다.</p>
       <div class="tw"><table><tr><th>구분</th><th>세율</th><th>장기보유특별공제</th></tr><tr><td>조정대상지역 주택 · 2주택자</td><td>기본세율 + 20%p</td><td>적용 안 됨</td></tr><tr><td>조정대상지역 주택 · 3주택 이상</td><td>기본세율 + 30%p</td><td>적용 안 됨</td></tr><tr><td>조정대상지역이 아닌 주택</td><td>기본세율 (6~45%)</td><td>적용</td></tr></table></div>
       <ul><li>양도소득세에는 그 10%만큼 <b>지방소득세가 따로 붙습니다.</b> 실제 부담은 기본세율이 6.6~49.5%이고, 중과되면 2주택 최고 71.5%, 3주택 이상 최고 82.5%입니다.</li><li><span class="pill now">시행 중</span>중과 유예는 2026년 5월 9일로 끝나, 5월 10일 이후 양도분부터 다시 중과됩니다.</li><li><span class="pill plan">정부안</span>2027~2028년 한시적으로 중과 폭을 낮추는 방안이 세제개편안에 담겨 국회 심의 중입니다.</li></ul></div></details>
 
-    <details data-c="중과·규제지역"><summary><span class="n">Q4</span><span class="t">지금 조정대상지역은 어디인가요?</span><span class="cat">중과·규제지역</span></summary>
+    <details data-c="중과·규제지역"><summary><span class="n">Q4</span><span class="t">지금 조정대상지역은 어디인가요?</span><span class="cat">[중과·규제지역]</span></summary>
       <div class="a"><p><b>서울 전 지역</b>과 <b>경기 15곳</b>입니다. 과천, 광명, 의왕, 하남, 구리, 성남(분당·수정·중원), 수원(영통·장안·팔달), 안양 동안, 용인(수지·기흥), 화성 동탄.</p><p>이 가운데 구리, 용인 기흥, 화성 동탄은 2026년 7월 1일에 추가되었습니다.</p><div class="warn"><b>계약 전에 꼭 다시 확인하세요.</b> 조정대상지역과 토지거래허가구역은 이 자료를 작성한 뒤(2026년 10월)에도 새로 지정되거나 해제될 수 있습니다. 계약하려는 집이 지금 어디에 해당하는지 반드시 미리 확인하셔야 합니다.</div></div></details>
 
-    <details data-c="중과·규제지역"><summary><span class="n">Q5</span><span class="t">토지거래허가구역이면 세금이 달라지나요?</span><span class="cat">중과·규제지역</span></summary>
+    <details data-c="중과·규제지역"><summary><span class="n">Q5</span><span class="t">토지거래허가구역이면 세금이 달라지나요?</span><span class="cat">[중과·규제지역]</span></summary>
       <div class="a"><p>세율이 달라지지는 않습니다. 다만 <b>거래 방식과 일정</b>이 달라져 세금에 간접적으로 영향을 줍니다.</p>
       <ul><li>구청 허가를 받아야 계약할 수 있고, 사는 사람은 <b>2년간 직접 거주</b>해야 합니다. 전세를 끼고 파는 거래가 어렵습니다.</li><li>허가 절차만큼 잔금일이 늦어집니다. 양도세는 <b>잔금일 기준</b>으로 계산하므로, 비과세 기한이나 보유기간을 넉넉히 잡으셔야 합니다.</li><li>세입자가 있는 집은 무주택자가 살 경우 입주를 임대차 종료 때까지 미룰 수 있는 제도가 2026년 5월부터 시행 중입니다.</li></ul></div></details>
 
-    <details data-c="주택 수"><summary><span class="n">Q6</span><span class="t">'1세대'는 누구까지인가요?</span><span class="cat">주택 수</span></summary>
+    <details data-c="주택 수"><summary><span class="n">Q6</span><span class="t">'1세대'는 누구까지인가요?</span><span class="cat">[주택 수]</span></summary>
       <div class="a"><p><b>본인과 배우자, 그리고 같은 주소에서 생계를 함께하는 가족</b>(부모, 자녀, 형제자매)입니다.</p>
       <ul><li>배우자는 주소가 달라도 항상 같은 세대입니다.</li><li>미혼 자녀는 주소만 옮긴다고 별도 세대가 되지 않습니다. <b>30세 이상</b>이거나, 일정 소득(기준 중위소득의 40% 이상)으로 독립해 생활해야 인정됩니다.</li><li>주민등록이 아니라 <b>실제 생활</b>을 기준으로 판단합니다.</li></ul></div></details>
 
-    <details data-c="주택 수"><summary><span class="n">Q7</span><span class="t">주택 수에는 무엇이 들어가나요?</span><span class="cat">주택 수</span></summary>
+    <details data-c="주택 수"><summary><span class="n">Q7</span><span class="t">주택 수에는 무엇이 들어가나요?</span><span class="cat">[주택 수]</span></summary>
       <div class="a"><p>세대원 모두의 주택을 합산하며, 집이 아닌 것처럼 보여도 포함되는 것이 있습니다.</p>
       <div class="tw"><table><tr><th>구분</th><th>주택 수 포함 여부</th></tr><tr><td>주거용 오피스텔</td><td>포함. 전입신고 여부보다 <b>실제 주거로 쓰는지</b>로 판단합니다</td></tr><tr><td>분양권</td><td><b>2021년 1월 1일 이후 취득분</b>부터 포함</td></tr><tr><td>조합원입주권</td><td>포함</td></tr><tr><td>공동명의 지분</td><td>지분이 작아도 각자 1주택 (부부 등 같은 세대는 1주택)</td></tr></table></div></div></details>
 
-    <details data-c="비과세"><summary><span class="n">Q8</span><span class="t">임대주택이 있으면 내가 사는 집은 비과세가 한 번뿐인가요?</span><span class="cat">비과세</span></summary>
+    <details data-c="비과세"><summary><span class="n">Q8</span><span class="t">임대주택이 있으면 내가 사는 집은 비과세가 한 번뿐인가요?</span><span class="cat">[비과세]</span></summary>
       <div class="a"><p>예전에는 평생 한 번이었지만, <b>2025년 시행령 개정으로 횟수 제한이 없어졌습니다.</b> 요건을 갖춘 등록 임대주택 외에 2년 이상 거주한 집을 팔면 다시 비과세를 받을 수 있습니다.</p><p>임대주택의 등록 시기·임대료 증액 제한 등 요건이 까다로우니 사전 확인이 필요합니다.</p></div></details>
 
-    <details data-c="비과세"><summary><span class="n">Q9</span><span class="t">이사하느라 잠시 2주택이 되면 언제까지 팔아야 하나요?</span><span class="cat">비과세</span></summary>
+    <details data-c="비과세"><summary><span class="n">Q9</span><span class="t">이사하느라 잠시 2주택이 되면 언제까지 팔아야 하나요?</span><span class="cat">[비과세]</span></summary>
       <div class="a"><p>새 집을 산 날부터 <b>3년 안에</b> 기존 집을 팔면 비과세됩니다(기존 집을 산 지 1년이 지난 뒤 새 집을 산 경우).</p>
       <ul><li><span class="pill now">2026.10.1. 시행</span>기존 집과 새 집이 <b>모두 조정대상지역</b>에 있으면 <b>2년</b>으로 줄었습니다(2026년 8월 4일 이후 새 집 취득분, 2026년 10월 1일 이후 양도분부터).</li><li>2026년 8월 3일까지 새 집을 샀거나 계약금을 치른 경우에는 종전대로 3년이 적용됩니다.</li></ul></div></details>
 
-    <details data-c="바뀔 예정"><summary><span class="n">Q10</span><span class="t">앞으로 바뀔 예정인 내용이 있나요?</span><span class="cat">바뀔 예정</span></summary>
+    <details data-c="바뀔 예정"><summary><span class="n">Q10</span><span class="t">앞으로 바뀔 예정인 내용이 있나요?</span><span class="cat">[바뀔 예정]</span></summary>
       <div class="a"><p>2026년 8월 발표된 세제개편안에 아래 내용이 담겨 있습니다. <b>아직 국회 심의 중인 정부안</b>이라 확정된 것은 아니지만, 매도 시기를 정하실 때 참고하실 만합니다.</p>
       <div class="tw"><table><tr><th>항목</th><th>정부안 내용</th><th>적용 예정</th></tr><tr><td>장기보유특별공제</td><td>'보유' 중심에서 <b>'거주' 중심</b>으로 개편. 살지 않고 보유만 한 주택은 공제 축소</td><td>2028년 양도분부터 단계 적용</td></tr><tr><td>다주택 중과</td><td>가산세율을 한시 완화. 2주택 2027년 +5%p·2028년 +10%p, 3주택 이상 2027년 +10%p·2028년 +15%p</td><td>2027~2028년 양도분</td></tr></table></div></div></details>
-    
-      <p class="none" id="none" hidden>찾으시는 내용이 없습니다. 다른 단어로 검색해 보세요.</p>
     </div>
 
     <h2 id="y5"><span class="no">5</span>절세를 위한 세 가지 습관</h2>
@@ -572,8 +572,8 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <h2 id="g1"><span class="no">1</span>진행 절차</h2>
     <p class="sub2">세금 점검부터 신고까지 일곱 단계입니다.</p>
     <ol class="steps">
-      <li><span class="c">1</span><div><span class="h">증여 전 세금 점검</span><span class="when">증여 전</span><p>증여세와 취득세가 얼마인지, 최근 10년 안에 같은 분에게 받은 증여가 있는지 확인합니다. 대출이나 전세보증금을 함께 넘길지도 이때 정합니다.</p></div></li>
-      <li><span class="c">2</span><div><span class="h">집값 평가</span><p>증여세는 시가로 계산합니다. 증여일 전 6개월부터 후 3개월 사이에 같은 단지의 비슷한 집이 팔린 가격이 있으면 그 가격이 기준이 됩니다. 없으면 감정평가를 받거나 공시가격으로 신고합니다.</p>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">증여 전 세금 점검</span><span class="when">증여 전</span><p>증여세와 취득세가 얼마인지, 최근 10년 안에 같은 분에게 받은 증여가 있는지 확인합니다. 대출이나 전세보증금을 함께 넘길지도 이때 정합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">집값 평가</span><p>증여세는 시가로 계산합니다. 증여일 전 6개월부터 후 3개월 사이에 같은 단지의 비슷한 집이 팔린 가격이 있으면 그 가격이 기준이 됩니다. 없으면 감정평가를 받거나 공시가격으로 신고합니다.</p>
 <p style="margin-top:8px"><b>'비슷한 집'으로 보는 기준 (아파트 등 공동주택)</b></p>
 <ul style="margin:2px 0 0;padding-left:20px;font-size:14.8px">
 <li>같은 단지에 있을 것</li>
@@ -581,11 +581,11 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
 <li>공시가격(공동주택가격) 차이가 5% 이내일 것</li>
 </ul>
 <p style="margin-top:6px">세 가지를 모두 충족하는 거래가 여러 건이면 공시가격 차이가 가장 작은 집의 거래가격을 씁니다. 증여세를 신고한 날까지의 거래만 반영되므로, 등기 후 신고를 서두르면 그 뒤의 거래에는 영향을 받지 않습니다.</p></div></li>
-      <li><span class="c">3</span><div><span class="h">증여계약서 작성</span><p>주는 분과 받는 분이 증여계약서를 쓰고, 시·군·구청에서 검인을 받습니다.</p></div></li>
-      <li><span class="c">4</span><div><span class="h">취득세 신고·납부</span><span class="when">증여계약일이 속한 달의 말일부터 3개월 이내</span><p>받는 분이 시·군·구청에 신고합니다. 등기를 신청하려면 그 전에 납부해야 합니다.</p></div></li>
-      <li><span class="c">5</span><div><span class="h">소유권 이전 등기</span><span class="when">증여일</span><p>등기 접수일이 세법상 증여일입니다. 증여세 신고기한과 평가 기간을 모두 이 날 기준으로 계산합니다.</p></div></li>
-      <li><span class="c">6</span><div><span class="h">증여세 신고·납부</span><span class="when">증여일이 속한 달의 말일부터 3개월 이내</span><p>받는 분이 주소지 세무서에 신고합니다. 기한 안에 신고하면 세액의 3%를 공제받습니다.</p></div></li>
-      <li><span class="c">7</span><div><span class="h">대출·보증금을 함께 넘긴 경우 양도소득세 신고</span><span class="when">증여일이 속한 달의 말일부터 3개월 이내</span><p>넘긴 채무만큼은 주는 분이 집을 판 것으로 보아, 주는 분이 양도소득세를 신고합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">증여계약서 작성</span><p>주는 분과 받는 분이 증여계약서를 쓰고, 시·군·구청에서 검인을 받습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">취득세 신고·납부</span><span class="when">증여계약일이 속한 달의 말일부터 3개월 이내</span><p>받는 분이 시·군·구청에 신고합니다. 등기를 신청하려면 그 전에 납부해야 합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">소유권 이전 등기</span><span class="when">증여일</span><p>등기 접수일이 세법상 증여일입니다. 증여세 신고기한과 평가 기간을 모두 이 날 기준으로 계산합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">증여세 신고·납부</span><span class="when">증여일이 속한 달의 말일부터 3개월 이내</span><p>받는 분이 주소지 세무서에 신고합니다. 기한 안에 신고하면 세액의 3%를 공제받습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">대출·보증금을 함께 넘긴 경우 양도소득세 신고</span><span class="when">증여일이 속한 달의 말일부터 3개월 이내</span><p>넘긴 채무만큼은 주는 분이 집을 판 것으로 보아, 주는 분이 양도소득세를 신고합니다.</p></div></li>
     </ol>
 
     <h2 id="g2"><span class="no">2</span>세금 안내</h2>
@@ -650,13 +650,13 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <h2 id="i1"><span class="no">1</span>진행 절차</h2>
     <p class="sub2">사망신고부터 상속세 결정까지 일곱 단계입니다.</p>
     <ol class="steps">
-      <li><span class="c">1</span><div><span class="h">사망신고</span><span class="when">사망을 안 날부터 1개월 이내</span><p>주민센터나 시·구청에 신고합니다.</p></div></li>
-      <li><span class="c">2</span><div><span class="h">재산과 빚 조회</span><span class="when">사망일이 속한 달의 말일부터 1년 이내</span><p>안심상속 원스톱 서비스를 신청하면 고인의 예금, 대출, 보험, 부동산, 세금 체납 등을 한 번에 조회할 수 있습니다. 사망신고와 함께 신청하시면 편합니다. 금융거래 조회 결과는 신청 후 2~3주 뒤에 나오고, <b>신청일부터 3개월이 지나면 삭제</b>됩니다. 5번까지만 볼 수 있으니 볼 때마다 저장해 두세요.</p></div></li>
-      <li><span class="c">3</span><div><span class="h">상속받을지 결정</span><span class="when">상속을 안 날부터 3개월 이내</span><p>빚이 재산보다 많으면 가정법원에 상속포기나 한정승인을 신청합니다. 기한을 넘기면 빚까지 모두 물려받습니다.</p></div></li>
-      <li><span class="c">4</span><div><span class="h">상속재산 나누기</span><p>상속인 모두가 합의하여 상속재산분할협의서를 작성합니다. 누가 집을 받느냐에 따라 상속세와 이후 양도세가 달라집니다. 지분으로 나누어 받으면 청약·대출 자격에도 영향이 있으니 <a href="#i3">함께 상속받을 때</a>를 먼저 보세요.</p></div></li>
-      <li><span class="c">5</span><div><span class="h">취득세 신고와 상속 등기</span><span class="when">사망일이 속한 달의 말일부터 6개월 이내</span><p>집을 받는 상속인이 취득세를 신고·납부하고 등기를 이전합니다.</p></div></li>
-      <li><span class="c">6</span><div><span class="h">상속세 신고·납부</span><span class="when">사망일이 속한 달의 말일부터 6개월 이내</span><p>고인의 주소지 세무서에 신고합니다. 기한 안에 신고하면 세액의 3%를 공제받습니다. 낼 세금이 없어도 신고해 두면 나중에 집을 팔 때 취득가액을 인정받는 근거가 됩니다.</p></div></li>
-      <li><span class="c">7</span><div><span class="h">세무서의 결정</span><span class="when">신고기한부터 9개월 이내</span><p>상속세는 신고로 끝나지 않고 세무서가 조사하여 확정합니다. 고인의 최근 10년 금융거래를 확인하는 경우가 많습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">사망신고</span><span class="when">사망을 안 날부터 1개월 이내</span><p>주민센터나 시·구청에 신고합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">재산과 빚 조회</span><span class="when">사망일이 속한 달의 말일부터 1년 이내</span><p>안심상속 원스톱 서비스를 신청하면 고인의 예금, 대출, 보험, 부동산, 세금 체납 등을 한 번에 조회할 수 있습니다. 사망신고와 함께 신청하시면 편합니다. 금융거래 조회 결과는 신청 후 2~3주 뒤에 나오고, <b>신청일부터 3개월이 지나면 삭제</b>됩니다. 5번까지만 볼 수 있으니 볼 때마다 저장해 두세요.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">상속받을지 결정</span><span class="when">상속을 안 날부터 3개월 이내</span><p>빚이 재산보다 많으면 가정법원에 상속포기나 한정승인을 신청합니다. 기한을 넘기면 빚까지 모두 물려받습니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">상속재산 나누기</span><p>상속인 모두가 합의하여 상속재산분할협의서를 작성합니다. 누가 집을 받느냐에 따라 상속세와 이후 양도세가 달라집니다. 지분으로 나누어 받으면 청약·대출 자격에도 영향이 있으니 <a href="#i3">함께 상속받을 때</a>를 먼저 보세요.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">취득세 신고와 상속 등기</span><span class="when">사망일이 속한 달의 말일부터 6개월 이내</span><p>집을 받는 상속인이 취득세를 신고·납부하고 등기를 이전합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">상속세 신고·납부</span><span class="when">사망일이 속한 달의 말일부터 6개월 이내</span><p>고인의 주소지 세무서에 신고합니다. 기한 안에 신고하면 세액의 3%를 공제받습니다. 낼 세금이 없어도 신고해 두면 나중에 집을 팔 때 취득가액을 인정받는 근거가 됩니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">세무서의 결정</span><span class="when">신고기한부터 9개월 이내</span><p>상속세는 신고로 끝나지 않고 세무서가 조사하여 확정합니다. 고인의 최근 10년 금융거래를 확인하는 경우가 많습니다.</p></div></li>
     </ol>
 
     <h2 id="i2"><span class="no">2</span>세금 안내</h2>
@@ -785,13 +785,13 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <h2 id="p2"><span class="no">2</span>진행 절차</h2>
     <p class="sub2">계약 전 점검부터 매년 하는 신고까지 일곱 단계입니다.</p>
     <ol class="steps">
-      <li><span class="c">1</span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>주택을 어떤 용도로 쓸지(임대, 직원 사택, 매매), 자금을 어떻게 마련할지, 정관의 목적사업에 맞는지 확인합니다. 세금 부담을 개인 명의와 비교해 봅니다.</p></div></li>
-      <li><span class="c">2</span><div><span class="h">내부 결의</span><p>이사회나 주주총회에서 취득을 결의하고 의사록을 남깁니다. 은행 대출과 등기에 필요합니다.</p></div></li>
-      <li><span class="c">3</span><div><span class="h">매매계약</span><p>법인 명의로 계약하고 법인인감을 날인합니다. 대금은 반드시 법인 계좌에서 보냅니다.</p></div></li>
-      <li><span class="c">4</span><div><span class="h">부동산 거래신고와 자금조달계획서</span><span class="when">계약일부터 30일 이내</span><p>법인은 지역과 금액에 관계없이 자금조달계획서를 내고, 법인 현황과 취득 목적도 함께 신고합니다.</p></div></li>
-      <li><span class="c">5</span><div><span class="h">잔금, 취득세, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다.</p></div></li>
-      <li><span class="c">6</span><div><span class="h">용도에 맞게 정리</span><p>임대하면 임대차계약을 맺고 사업자등록에 임대업을 추가합니다. 사택이나 휴양시설로 쓰면 운영 규정과 이용대장을 갖춥니다. 대표가 쓰면 법인과 임대차계약을 맺고 시세대로 임대료를 냅니다.</p></div></li>
-      <li><span class="c">7</span><div><span class="h">매년 하는 신고</span><span class="when">매년</span><p>법인세(사업연도 종료 후 3개월 이내), 재산세(7월, 9월), 종합부동산세(12월)를 신고·납부합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>주택을 어떤 용도로 쓸지(임대, 직원 사택, 매매), 자금을 어떻게 마련할지, 정관의 목적사업에 맞는지 확인합니다. 세금 부담을 개인 명의와 비교해 봅니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">내부 결의</span><p>이사회나 주주총회에서 취득을 결의하고 의사록을 남깁니다. 은행 대출과 등기에 필요합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">매매계약</span><p>법인 명의로 계약하고 법인인감을 날인합니다. 대금은 반드시 법인 계좌에서 보냅니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">부동산 거래신고와 자금조달계획서</span><span class="when">계약일부터 30일 이내</span><p>법인은 지역과 금액에 관계없이 자금조달계획서를 내고, 법인 현황과 취득 목적도 함께 신고합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">잔금, 취득세, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">용도에 맞게 정리</span><p>임대하면 임대차계약을 맺고 사업자등록에 임대업을 추가합니다. 사택이나 휴양시설로 쓰면 운영 규정과 이용대장을 갖춥니다. 대표가 쓰면 법인과 임대차계약을 맺고 시세대로 임대료를 냅니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">매년 하는 신고</span><span class="when">매년</span><p>법인세(사업연도 종료 후 3개월 이내), 재산세(7월, 9월), 종합부동산세(12월)를 신고·납부합니다.</p></div></li>
     </ol>
 
     <h2 id="p3"><span class="no">3</span>미리 따져볼 것</h2>
@@ -852,14 +852,14 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
     <h2 id="q2"><span class="no">2</span>진행 절차</h2>
     <p class="sub2">계약 전 점검부터 매년 하는 신고까지 여덟 단계입니다.</p>
     <ol class="steps">
-      <li><span class="c">1</span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>본점 소재지와 설립일로 취득세 중과 여부를 확인합니다. 정관의 목적사업에 부동산임대업이 있는지, 임차인 현황과 대출 가능 금액도 확인합니다.</p></div></li>
-      <li><span class="c">2</span><div><span class="h">내부 결의</span><p>이사회나 주주총회에서 취득을 결의하고 의사록을 남깁니다.</p></div></li>
-      <li><span class="c">3</span><div><span class="h">매매계약</span><p>법인 명의로 계약합니다. 토지값과 건물값을 나누어 적고, 부가가치세를 별도로 할지 포괄양수도로 할지 정합니다.</p></div></li>
-      <li><span class="c">4</span><div><span class="h">사업자등록</span><span class="when">계약 후 바로</span><p>임대할 상가는 그 상가 소재지에 사업자등록(지점)을 따로 해야 합니다. 직접 쓸 상가는 기존 사업자등록에 사업장을 추가하거나 이전합니다.</p></div></li>
-      <li><span class="c">5</span><div><span class="h">부동산 거래신고</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다.</p></div></li>
-      <li><span class="c">6</span><div><span class="h">잔금, 취득세, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다. 건물분 세금계산서를 받아 둡니다.</p></div></li>
-      <li><span class="c">7</span><div><span class="h">부가가치세 환급 신청</span><span class="when">세금계산서를 받은 달의 다음 달 25일까지</span><p>건물분 부가가치세를 조기환급으로 신청합니다.</p></div></li>
-      <li><span class="c">8</span><div><span class="h">매년 하는 신고</span><span class="when">매년</span><p>부가가치세(1월, 4월, 7월, 10월)와 법인세(사업연도 종료 후 3개월 이내)를 신고합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">계약 전 점검</span><span class="when">계약 전</span><p>본점 소재지와 설립일로 취득세 중과 여부를 확인합니다. 정관의 목적사업에 부동산임대업이 있는지, 임차인 현황과 대출 가능 금액도 확인합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">내부 결의</span><p>이사회나 주주총회에서 취득을 결의하고 의사록을 남깁니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">매매계약</span><p>법인 명의로 계약합니다. 토지값과 건물값을 나누어 적고, 부가가치세를 별도로 할지 포괄양수도로 할지 정합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">사업자등록</span><span class="when">계약 후 바로</span><p>임대할 상가는 그 상가 소재지에 사업자등록(지점)을 따로 해야 합니다. 직접 쓸 상가는 기존 사업자등록에 사업장을 추가하거나 이전합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">부동산 거래신고</span><span class="when">계약일부터 30일 이내</span><p>실제 거래가격을 시·군·구청에 신고합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">잔금, 취득세, 등기</span><span class="when">취득일부터 60일 이내</span><p>잔금을 치르고 취득세를 신고·납부한 뒤 등기를 이전합니다. 건물분 세금계산서를 받아 둡니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">부가가치세 환급 신청</span><span class="when">세금계산서를 받은 달의 다음 달 25일까지</span><p>건물분 부가가치세를 조기환급으로 신청합니다.</p></div></li>
+      <li><span class="c" aria-hidden="true"></span><div><span class="h">매년 하는 신고</span><span class="when">매년</span><p>부가가치세(1월, 4월, 7월, 10월)와 법인세(사업연도 종료 후 3개월 이내)를 신고합니다.</p></div></li>
     </ol>
     <div class="warn"><b>돈을 보낼 때마다, 세금계산서를 받을 때마다 사무소에 꼭 알려 주세요.</b> 계약금·중도금·잔금을 각각 언제 얼마 보냈는지, 세금계산서를 언제 얼마로 받았는지 알려 주셔야 그 달 분 부가가치세를 제때 환급 신청할 수 있습니다. 매매계약서 사본도 함께 보내 주세요.</div>
 
@@ -900,7 +900,8 @@ h3+.steps,h3+.grid2,h3+.docs{margin-top:10px}
 <script>
 (function(){
   var items=[].slice.call(document.querySelectorAll('#list details'));
-  var q=document.getElementById('q'), none=document.getElementById('none'), cat='all';
+  var q=document.getElementById('q'), none=document.createElement('p'), cat='all';
+  none.className='none'; none.id='none'; none.textContent='찾으시는 내용이 없습니다. 다른 단어로 검색해 보세요.'; none.hidden=true; document.getElementById('list').appendChild(none);
   function apply(){
     var k=q.value.trim().toLowerCase(), shown=0;
     items.forEach(function(d){
